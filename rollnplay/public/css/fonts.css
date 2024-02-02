@@ -1,0 +1,47 @@
+#content{
+    padding-top: 5%;
+}
+   
+
+.navbar {
+    position: fixed;
+}
+
+.nav-item,
+.dropdown-item {
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #1d1c1a;
+    
+}
+.nav-item{
+    font-size: 3vh;
+}
+
+#n1 :hover {
+    text-shadow: #2148d1 1px 1px 2px;
+}
+#n2 :hover {
+    text-shadow: #ff3333 1px 1px 2px;
+}
+#n3 :hover {
+    text-shadow: #fdd91f 1px 1px 2px;
+}
+#n4 :hover {
+    text-shadow: #00bf63 1px 1px 2px;
+}
+
+/* footer */
+#icon_1 :hover {
+    text-shadow: #2148d1 1px 1px 5px;
+}
+#icon_2 :hover {
+    text-shadow: #ff3333 1px 1px 5px;
+}
+#icon_3 :hover {
+    text-shadow: #fdd91f 1px 1px 5px;
+}
+#icon_4 :hover {
+    text-shadow: #00bf63 1px 1px 5px;
+}
