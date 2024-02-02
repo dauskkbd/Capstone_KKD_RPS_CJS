@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Navbar brand -->
             <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                <img src="/img/Roll.png" height="60" alt="MDB Logo" loading="lazy" />
+                <img src="/images/Roll.png" height="60" alt="MDB Logo" loading="lazy" />
             </a>
             <!-- Left links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
