@@ -1,0 +1,83 @@
+body{
+    background-color: #878787
+}
+
+/* hero banner section */
+#hero_banner_section{
+    margin-top: 6%;
+}
+
+.hero-banner {
+    margin-bottom: 3%;
+    border-radius: 10px;
+    /* box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5); */
+}
+
+.square-banner{
+    border-radius: 10px;
+    /* box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5); */
+}
+
+.square-banner:hover {
+    transition: transform 0.5s ease;
+    transform: scale(1.05);
+}
+
+.landscape-banner-section{
+    margin-top: 2%;    
+}
+
+#landscape_banner{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    /* box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5); */
+}
+
+#landscape_banner:hover{
+    transition: transform 0.5s ease;
+    transform: scale(1.05);
+}
+
+#shop_by_category_header{
+    margin-top: 8%;
+}
+
+#shop_by_category_section{
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+    padding: 30px 30px 0px 30px;
+}
+
+#shop_by_category_section a{
+    text-decoration: none;
+    color: rgb(29, 28, 26);
+    transition: color 0.5s ease;
+}
+
+#shop_by_category_section a:hover {
+    color:rgb(54, 54, 255)
+}
+
+.category {
+    text-align: center;
+    font-size: 23px;
+}
+
+.category p {
+   margin-top: 7px;
+}
+
+.category .img-fluid{
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.category .img-fluid:hover{
+    transition: transform 0.5s ease;
+    transform: scale(1.03);
+}
+
+#suggested_game_container{
+    margin-top: 5%;
+}

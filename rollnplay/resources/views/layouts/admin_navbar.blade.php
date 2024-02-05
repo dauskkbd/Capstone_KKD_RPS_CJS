@@ -27,7 +27,7 @@
             <!-- Left links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item" id="n1">
-                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="/home">Dashboard</a>
                 </li>
                 <li class="nav-item" id="n2">
                     <a class="nav-link" href="/shop">Shop</a>
