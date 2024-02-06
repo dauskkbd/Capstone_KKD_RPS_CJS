@@ -30,6 +30,7 @@
           style="
             background-image: url('https://newywithkids.com.au/wp-content/uploads/2019/09/FamilyBestBoardGames.jpg');
             height: 400px;
+            /* z-index: -1; */
           "
         >
           <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
