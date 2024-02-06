@@ -6,25 +6,9 @@
     
 </head>
 <body>
-    @include("layouts/admin_navbar")
+    @include("layouts/navbar_admin")
     <canvas id="chart-line"></canvas>
-    <script>
-        const dataLine = {
-            type: "line",
-            data: {
-            labels: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-            datasets: [{
-                label: "Traffic",
-                data: [3234, 2234, 3234, 1234],
-                borderColor: "#4285F4",
-                backgroundColor: "#4285F4",
-                fill: false,
-            }, ],
-            },
-        };
-        
-        new mdb.Chart(document.getElementById("chart-line"), dataLine);
-    </script>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque laboriosam quos ipsam eius dicta sequi exercitationem, earum, aspernatur aut, placeat repellendus iste a consequuntur! Ex possimus ratione molestias, ea officia maxime vitae voluptatibus similique cum porro atque. Saepe qui aperiam, atque adipisci natus nam deleniti. Minus possimus, hic quod qui eveniet quidem veritatis facere, dicta sapiente placeat quasi consequuntur iure nobis dignissimos exercitationem voluptatem dolorem accusantium. Molestiae magni labore iure perspiciatis non, velit ratione, necessitatibus eum, consectetur consequatur veritatis ex. Voluptatum vel sint vero praesentium beatae, expedita voluptates consequuntur non eius ullam quasi amet voluptas quibusdam error nihil odit ex! Reprehenderit itaque quo impedit! Odio eos consectetur quidem eligendi non vitae facere recusandae iste, distinctio delectus nesciunt excepturi dolore optio, fugiat, aut aperiam at et numquam a culpa repellendus illum molestiae! Vitae tempora ut natus facilis iusto facere, tempore, quas deserunt molestiae dolores saepe, reiciendis cupiditate minima? Repudiandae quas est enim ea tempora eaque quisquam dolor at saepe perspiciatis corporis tenetur atque nihil impedit, expedita quod. Doloribus, hic iste. Velit rem debitis amet aut. Iusto soluta aspernatur minima fugit, earum quasi minus expedita distinctio dolor incidunt tempore harum aut sunt ad quaerat explicabo sed suscipit cupiditate enim eum necessitatibus fugiat? Voluptate eos quis labore magnam placeat, vel aut praesentium. Ullam perferendis quia et id quae laborum aliquid obcaecati animi. Consequuntur dolorum consequatur tenetur dolorem natus quis, id ex illo, odio est accusamus asperiores totam aspernatur autem magnam hic laudantium debitis voluptatibus mollitia aut! Omnis sed facere incidunt a animi fugit labore cupiditate fugiat, quaerat quas non repellendus. Dolor eius tenetur cum laborum blanditiis officiis libero ab, tempora id repellendus, molestias rem, officia a quo accusantium magnam consequuntur eos repudiandae corporis? Illum cupiditate ab placeat nam exercitationem molestias animi laborum totam velit sed temporibus fugit quod nulla nostrum suscipit voluptate ipsa ipsum natus accusantium, dolores officia expedita nisi provident? Nam reiciendis ut delectus odio. Eaque, fugiat aspernatur. Saepe magni quidem cumque velit quia deleniti quis molestias totam. Vel magni itaque, vero repellendus quibusdam atque harum est nisi. Officiis nesciunt qui nam repellendus. Obcaecati eveniet laudantium atque, officiis inventore odit hic sit voluptatibus aut quidem aliquam aliquid? A autem, ut similique laboriosam ex fuga doloremque sunt et qui dignissimos aut deleniti beatae tenetur voluptatibus veritatis incidunt vero debitis aspernatur, quis, inventore numquam minima nostrum. Nisi iste possimus sint, animi ab odit officiis, error voluptatum, recusandae itaque vero fuga? Molestiae nostrum iste est veritatis amet in numquam suscipit doloribus. Quos, distinctio excepturi sunt omnis veniam blanditiis atque odio esse odit tempora velit nostrum ipsam illum, necessitatibus fugiat dolorem soluta autem! Nesciunt odit impedit vero ad obcaecati ab perferendis facilis. Recusandae sint nihil, suscipit earum, velit magnam sapiente quos molestiae ex et labore voluptatum optio hic veniam ut, iste rem expedita! Magni laudantium harum asperiores. Excepturi, officia error cumque aut beatae recusandae alias similique sunt est ipsam dolore fugit illo atque voluptate animi optio et earum eligendi nihil quam at! Explicabo numquam id molestiae dolorum nisi? Exercitationem quas obcaecati aliquam tempore est odit asperiores?</p>
 
 
     @include("layouts/footer")

@@ -9,20 +9,18 @@ use App\Http\Controllers\UserController;
 Route::get("/login", [UserController::class, "show_login"]);
 Route::post("/login", [UserController::class, "login"]);
 
-Route::get('/generate_user', [UserController::class, "generate_user"]);
+Route::get("/logout", [UserController::class, "logout"]);
+
+Route::get("/register", [UserController::class, "show_register"]);
+Route::post("/register", [UserController::class, "register"]);
+
+
 
 
 Route::get("/about", function () {
     return view("about");
 });
 
-Route::get("/login", function () {
-    return view("login");
-});
-
-Route::get("/register", function () {
-    return view("register");
-});
 
 Route::get("/home", function () {
     return view("home");
