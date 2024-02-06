@@ -58,6 +58,7 @@
 <body>
     @include('layouts/navbar')
 
+
     {{-- hero banner section --}}
     <div class="container-fluid shop-banner-container">
         <div class="row">
@@ -116,6 +117,7 @@
                 </div>
             </div>
             <div class="col-lg-10 cards-container">
+                <a href="/admin/products/create" class="btn btn-success">Add products</a>
                 <div class="cards">
                     <div class="row">
                       @foreach ($products as $p)
