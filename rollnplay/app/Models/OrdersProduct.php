@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class OrdersProduct extends Model
 {
-	protected $table = 'orders_products';
+	protected $table = 'order_product';
 	protected $primaryKey = 'op_id';
 	public $timestamps = false;
 

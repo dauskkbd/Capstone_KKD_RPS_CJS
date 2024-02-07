@@ -12,14 +12,11 @@ use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
-    public function checkout()
-    {
-    }
 
     public function show_checkout(Request $r)
     {
         $order = new Order;
-        $order->user_id = "1";
+        $order->user_id = 4;
         $order->save();
 
         $product = Product::query()
@@ -27,7 +24,7 @@ class OrderController extends Controller
             ->where('stock', '>', '0')
             ->get();
 
-        $order_products = [];
+        $order_product = [];
         for ($i = 0; $i < count($product); $i++) {
             $num_ordered = $r->input('order_' . $product[$i]->product_id);
             if ($num_ordered > 0) {
@@ -36,7 +33,7 @@ class OrderController extends Controller
                 $op->product_id = $product[$i]->product_id;
                 $op->quantity = $num_ordered;
                 $op->save();
-                array_push($order_products, $op);
+                array_push($order_product, $op);
             }
         }
 
@@ -44,9 +41,10 @@ class OrderController extends Controller
             ->select('name', 'quantity', 'price')
             ->join('order_product', 'orders.order_id', '=', 'order_product.order_id')
             ->join('products', 'order_product.product_id', '=', 'products.product_id')
-            ->where('orders.order_id', '=', $order->order_id)
+            ->join('users', 'orders.user_id', '=', 'users.user_id')
+            ->where('orders.user_id', '=', 4)
             ->get();
 
-        return view('checkout', compact('order', 'order_products', 'receipt'));
+        return view('checkout', compact('order', 'order_product', 'receipt'));
     }
 }
