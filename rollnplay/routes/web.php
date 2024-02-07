@@ -49,8 +49,9 @@ Route::post("/admin/products/", [ProductController::class, 'store']);
 
 
 //delivery kuno
-
-Route::get('delivery/dashboard', [DeliveryController::class, 'view_orders_dash']);
-Route::delete('/delivery/dashboard/{id}', [DeliveryController::class, 'decline_order']);
+Route::get('/shop/checkout/orders', [DeliveryController::class, 'waiting_orders']);
+Route::get('/delivery/status', [DeliveryController::class, 'user_delivery_status']);
+Route::get('/shop/checkout/orders', [DeliveryController::class, 'waiting_orders']);
+Route::get('/delivery/status', [DeliveryController::class, 'user_delivery_status']);
 Route::get('/delivery/{id}', [DeliveryController::class, 'deliveries']);
 Route::put('/delivery/status/{id}', [DeliveryController::class, 'update_order_status']);

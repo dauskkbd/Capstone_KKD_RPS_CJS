@@ -22,12 +22,15 @@
                     <th>Price</th>
                 </tr>
                 @foreach($cart as $c)
-                <tr>
-                    <td>{{$c -> name}}</td>
-                    <td>{{$c -> quantity}}</td>
-                    <td>{{$c -> price}}</td>
-                </tr>
-                @endforeach
+                
+                    <tr>
+                        <td>{{$c -> name}}</td>
+                        <td>{{$c -> quantity}}</td>
+                        <td>{{$c -> price}}</td>
+                    </tr>
+
+            @endforeach
+            
             </table>
             <button type="submit" class="btn btn-success" data-mdb-ripple-init>Check out</button>
             <a href="/shop"><button type="button" class="btn btn-warning" data-mdb-ripple-init>Continue Shopping</button></a>
