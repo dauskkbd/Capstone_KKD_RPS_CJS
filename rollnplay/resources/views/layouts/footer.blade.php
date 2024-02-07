@@ -2,12 +2,19 @@
     .footer_head {
         font-family: "Londrina Solid", sans-serif;
     }
+    #footer_container{
+        background-color: #A69F92
+    }
+    .pop_text{
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+    }
 </style>
 
 {{-- footer --}}
 <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="my-1" id="footer_container">
-    <footer class="text-white text-center bg-dark">
+<div class="my-1 pop_text" id="footer_container">
+    <footer class="text-dark text-center">
         <!-- Grid container -->
         <div class="container p-4">
             <!--Grid row-->
@@ -53,15 +60,20 @@
                     <h5 class="text-uppercase mb-4 footer_head">Social Media</h5>
                     <div class="mt-4">
                         <!-- Facebook -->
-                        <a type="button" class="btn btn-floating btn-light btn-lg" id="icon_1"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" type="button" class="btn btn-floating btn-dark btn-lg" id="icon_1"><i class="fab fa-facebook-f"></i></a>
                         <!-- Dribbble -->
-                        <a type="button" class="btn btn-floating btn-light btn-lg" id="icon_2"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" type="button" class="btn btn-floating btn-dark btn-lg" id="icon_2"><i class="fab fa-instagram"></i></a>
                         <!-- Twitter -->
-                        <a type="button" class="btn btn-floating btn-light btn-lg" id="icon_3"><i class="fab fa-twitter"></i></a>
+                        <a href="https://twitter.com/" target="_blank" type="button" class="btn btn-floating btn-dark btn-lg" id="icon_3"><i class="fab fa-twitter"></i></a>
                         <!-- Google + -->
-                        <a type="button" class="btn btn-floating btn-light btn-lg" id="icon_4"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="https://www.google.com/" target="_blank" type="button" class="btn btn-floating btn-dark btn-lg" id="icon_4"><i class="fab fa-google-plus-g"></i></a>
                         <!-- Linkedin -->
                     </div>
+                    <a
+                class="footer_right_link"
+                href="https://www.instagram.com/"
+                target="_blank"
+                >
                 </div>
                 <!--Grid column-->
             </div>
@@ -72,7 +84,7 @@
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             © 2023 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">Roll and Play</a><br />
+            <a class="text-dark">Roll and Play</a><br />
             <p>Kevin Kenneth Daus |
                 Rendell Soberano |
                 Christian Jay Salvino</p>

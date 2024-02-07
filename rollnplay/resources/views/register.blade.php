@@ -46,6 +46,16 @@
                                         <label class="form-label" for="email">Email</label>
                                     </div>
 
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="text" id="mobile" class="form-control form-control-lg" name="mobile"/>
+                                        <label class="form-label" for="mobile">Mobile Number</label>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="text" id="province" class="form-control form-control-lg" name="province"/>
+                                        <label class="form-label" for="province">Province</label>
+                                    </div>
+
                                     <select class="browser-default custom-select" name="role">
                                         <option selected disabled>Open this select menu</option>
                                         <option value="user">User</option>

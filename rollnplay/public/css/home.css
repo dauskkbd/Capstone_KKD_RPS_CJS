@@ -1,16 +1,13 @@
 body {
-    background-color: #878787;
-}
-
-/* hero banner section */
-#hero_banner_section {
-    margin-top: 10%;
+    background-color: #D9D0C1;
+    padding-top: 100px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
 }
 
 #banner_header,
 #shop_by_category_header {
     display: block;
-    margin-bottom: 2%;
     text-align: center; /* Center the content horizontally */
     margin-bottom: 2%; /* Center the block-level element horizontally */
 }
@@ -54,11 +51,11 @@ body {
 #shop_by_category_container {
     /* height: 95%;
     width: 95%; */
-    margin-bottom: 8%;
+    margin-bottom: 2%;
 }
 
 #shop_by_category_header {
-    margin-top: 8%;
+    margin-top: 1%;
 }
 
 #shop_by_category_section {
@@ -82,7 +79,7 @@ body {
 }
 
 #shop_by_category_section a:hover {
-    color: rgb(54, 54, 255);
+    color: #8C564A;
 }
 
 .category {
@@ -114,7 +111,7 @@ body {
     border-radius: 10px;
     width: 85.8%;
     padding: 2%;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
 }
 
@@ -163,7 +160,7 @@ body {
     border: none;
     height: 100%;
     padding-top: 0%;
-    font-size: 180%;
+    font-size: 150%;
 }
 
 .increase-btn {
@@ -206,6 +203,7 @@ body {
 .add-to-cart:hover {
     background-color: rgba(0, 128, 0, 0.8);
     color: white;
+
 }
 
 .buy-now {
@@ -223,12 +221,21 @@ body {
 .visit-shop {
     text-align: center;
     margin-top: 2%;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 
 .visit-shop .btn {
     width: 20%;
-    height: 50%;
-    border-radius: 0px 20px 0px 20px;
-    background-color: rgba(0, 128, 0, 0.8);
+    height: 40%;
+    background-color: #8C564A;
 }
+#text_button{
+    color: #1d1c1a;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 20px;
+}
+.text_heading{
+    font-family: "Londrina Solid", sans-serif;
+    color: #1d1c1a;
+}
+
