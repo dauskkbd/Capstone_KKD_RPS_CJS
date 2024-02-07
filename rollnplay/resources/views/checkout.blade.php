@@ -13,20 +13,25 @@
 <body>
     @include('layouts/navbar')
     <div class="container checkout">
-        <table class="table">
-            <tr>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Price</th>
-            </tr>
-            @foreach($receipt as $r)
-            <tr>
-                <td>{{$r -> name}}</td>
-                <td>{{$r -> quantity}}</td>
-                <td>{{$r -> price}}</td>
-            </tr>
-            @endforeach
-        </table>
+        <form action="/shop/checkout" method="POST">
+            @csrf
+            <table class="table">  
+                <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                @foreach($cart as $c)
+                <tr>
+                    <td>{{$c -> name}}</td>
+                    <td>{{$c -> quantity}}</td>
+                    <td>{{$c -> price}}</td>
+                </tr>
+                @endforeach
+            </table>
+            <button type="submit" class="btn btn-success" data-mdb-ripple-init>Check out</button>
+            <a href="/shop"><button type="button" class="btn btn-warning" data-mdb-ripple-init>Continue Shopping</button></a>
+        </form>
     </div>
     @include('layouts/script')
     @include('layouts/footer')

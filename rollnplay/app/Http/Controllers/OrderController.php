@@ -7,44 +7,49 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\OrdersProduct;
+use App\Models\UsersCart;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
-
-    public function show_checkout(Request $r)
+    public function checkout()
     {
         $order = new Order;
         $order->user_id = 4;
-        $order->save();
+        $order->save(); //pushes the user_id on order table
+
+        return redirect('/shop');
+    }
+
+
+
+    public function push_cart(Request $r, string $id)
+    {
+        $user_cart = new UsersCart;
+        $user_cart->user_id = 4;
+        $user_cart->product_id = $id;
+        $user_cart->quantity = $r->input('order_' . $id);
+        $user_cart->save();
+
+        return redirect('/shop')->with('success', 'item was added to cart');
+    }
+
+
+    public function view_user_cart(Request $r)
+    {
 
         $product = Product::query()
             ->select('*')
             ->where('stock', '>', '0')
-            ->get();
+            ->get();  //gets all the product data with stock greater than zero
 
-        $order_product = [];
-        for ($i = 0; $i < count($product); $i++) {
-            $num_ordered = $r->input('order_' . $product[$i]->product_id);
-            if ($num_ordered > 0) {
-                $op = new OrdersProduct;
-                $op->order_id = $order->order_id;
-                $op->product_id = $product[$i]->product_id;
-                $op->quantity = $num_ordered;
-                $op->save();
-                array_push($order_product, $op);
-            }
-        }
+        $cart = UsersCart::query()
+            ->select('*')
+            ->join('products', 'products.product_id', '=', 'users_carts.product_id')
+            ->where('users_carts.user_id', '=', 4)
+            ->get(); //queries all items related to order of user
 
-        $receipt = Order::query()
-            ->select('name', 'quantity', 'price')
-            ->join('order_product', 'orders.order_id', '=', 'order_product.order_id')
-            ->join('products', 'order_product.product_id', '=', 'products.product_id')
-            ->join('users', 'orders.user_id', '=', 'users.user_id')
-            ->where('orders.user_id', '=', 4)
-            ->get();
-
-        return view('checkout', compact('order', 'order_product', 'receipt'));
+        return view('checkout', compact('cart'));
     }
 }

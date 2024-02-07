@@ -27,7 +27,10 @@ Route::get("/home", function () {
     return view("home");
 });
 
-Route::post('/shop/checkout', [OrderController::class, 'show_checkout']);
+
+Route::post('/shop/view/{id}', [OrderController::class, 'push_cart']);
+Route::get('/shop/view/', [OrderController::class, 'view_user_cart']);
+Route::post('/shop/checkout', [OrderController::class, 'checkout']);
 Route::get('/shop/product/{id}', [ProductController::class, 'products']);
 Route::get('/shop', [ProductController::class, 'index']);
 

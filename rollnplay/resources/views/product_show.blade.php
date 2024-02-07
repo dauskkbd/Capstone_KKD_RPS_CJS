@@ -11,10 +11,9 @@
     </style>
     <script>
       $(document).ready(function() {
-            $('#add_to_cart_button').click(function() {
-                $(this).hide();
-                 $('#view_cart_button').show();
-         });
+        $("#add_to_cart_button").click(function(){
+            $("#add_to_cart_message").text("Item added to cart!");
+        });
 
 
          $(".deduct_button").click(function() {
@@ -38,7 +37,7 @@
 <body>
     @include('layouts/navbar')
     <div class="container something">
-        <form action="/shop/checkout" method="POST">
+        <form action="/shop/view/{{request()->route('id')}}" method="POST">
         @csrf
         @foreach($products as $p)
         <ul>
@@ -52,17 +51,11 @@
         <a class="btn btn-danger deduct_button" id="deduct_{{$p -> product_id}}">-</a>
         <input type="number" style="width: 50px" min="0" max="99" value="0" id="order_{{$p -> product_id}}" name="order_{{$p -> product_id}}">
         <a class="btn btn-primary add_button" id="add_{{$p -> product_id}}">+</a>
-        <button type="submit" class="btn btn-success" data-mdb-ripple-init id="view_cart_button" style="display: none;">View Cart</button>
-        <button type="button" class="btn btn-success" data-mdb-ripple-init id="add_to_cart_button">Add to cart</button>
-        <button type="submit" class="btn btn-danger" data-mdb-ripple-init id="buy_now_button">Buy Now</button>
+        <span id="add_to_cart_message"></span>
+        <br><br>
+        <button type="submit" class="btn btn-success" data-mdb-ripple-init id="add_to_cart_button">Add to cart</button>
         </form>
-       
-        
-
     </div>
-
-    
-
     @include('layouts/script')
     @include('layouts/footer')
 </body>
