@@ -13,9 +13,9 @@ class DeliveryController extends Controller
     {
         $deliver = Order::query()
             ->select('*')
-            ->join('order_product', 'orders.order_id', '=', 'order_product.order_id')
-            ->join('products', 'order_product.product_id', '=', 'products.product_id')
             ->join('users', 'users.user_id', '=', 'orders.user_id')
+            ->join('users_carts', 'users_carts.user_id', '=', 'users.user_id')
+            ->join('products', 'products.product_id', '=', 'users_carts.product_id')
             ->where('orders.order_id', '=', $id)
             ->get();
 

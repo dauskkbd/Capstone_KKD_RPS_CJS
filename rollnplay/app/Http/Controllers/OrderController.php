@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Order;
 use App\Models\Product;
-use App\Models\OrdersProduct;
+use App\Models\OrderProduct;
 use App\Models\UsersCart;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +17,8 @@ class OrderController extends Controller
     {
         $order = new Order;
         $order->user_id = 4;
-        $order->save(); //pushes the user_id on order table
+        $order->status = 'waiting';
+        $order->save();
 
         return redirect('/shop');
     }
