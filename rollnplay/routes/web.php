@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DeliveryController;
 
 
 Route::get("/login", [UserController::class, "show_login"]);
@@ -42,3 +43,9 @@ Route::get("/dashboard", function () {
 
 Route::get("/admin/products", [ProductController::class, 'product_create']);
 Route::post("/admin/products/", [ProductController::class, 'store']);
+
+
+//delivery kuno
+
+Route::get('/delivery/{id}', [DeliveryController::class, 'deliveries']);
+Route::put('/delivery/status/{id}', [DeliveryController::class, 'update_order_status']);
