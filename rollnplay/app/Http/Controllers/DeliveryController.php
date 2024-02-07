@@ -9,6 +9,32 @@ use App\Models\User;
 
 class DeliveryController extends Controller
 {
+    public function decline_order(string $id)
+    {
+        $order = Order::find($id);
+
+        if ($order) {
+            $order->delete();
+        }
+
+        return redirect('delivery/dashboard');
+    }
+
+
+
+    public function view_orders_dash()
+    {
+        $order = Order::query()
+            ->select('*')
+            ->join('users', 'users.user_id', '=', 'orders.user_id')
+            ->get();
+
+
+        return view('deliver_dash', compact('order'));
+    }
+
+
+
     public function deliveries(string $id)
     {
         $deliver = Order::query()
@@ -18,6 +44,8 @@ class DeliveryController extends Controller
             ->join('products', 'products.product_id', '=', 'users_carts.product_id')
             ->where('orders.order_id', '=', $id)
             ->get();
+
+
 
 
         $orders = Order::query()
