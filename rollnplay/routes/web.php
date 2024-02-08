@@ -7,6 +7,14 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DeliveryController;
 
 
+
+
+
+
+
+
+//Public Side
+// Rendell 
 Route::get("/login", [UserController::class, "show_login"]);
 Route::post("/login", [UserController::class, "login"]);
 
@@ -22,36 +30,43 @@ Route::get("/about", function () {
     return view("about");
 });
 
-
 Route::get("/home", function () {
     return view("home");
 });
-
-
-Route::post('/shop/view/{id}', [OrderController::class, 'push_cart']);
-Route::get('/shop/view/', [OrderController::class, 'view_user_cart']);
-Route::post('/shop/checkout', [OrderController::class, 'checkout']);
-Route::get('/shop/product/{id}', [ProductController::class, 'products']);
-Route::get('/shop', [ProductController::class, 'index']);
-
 Route::get("/contact", function () {
     return view("contact");
 });
-
 Route::get("/dashboard", function () {
     return view("dashboard");
 });
 
-//admin kuno
-
-Route::get("/admin/products", [ProductController::class, 'product_create']);
-Route::post("/admin/products/", [ProductController::class, 'store']);
 
 
-//delivery kuno
-Route::get('/shop/checkout/orders', [DeliveryController::class, 'waiting_orders']);
-Route::get('/delivery/status', [DeliveryController::class, 'user_delivery_status']);
-Route::get('/shop/checkout/orders', [DeliveryController::class, 'waiting_orders']);
-Route::get('/delivery/status', [DeliveryController::class, 'user_delivery_status']);
-Route::get('/delivery/{id}', [DeliveryController::class, 'deliveries']);
-Route::put('/delivery/status/{id}', [DeliveryController::class, 'update_order_status']);
+
+//User Side
+
+Route::middleware('checkSessionUser')->post('/shop/view/{id}', [OrderController::class, 'push_cart']);
+Route::middleware('checkSessionUser')->get('/shop/view/', [OrderController::class, 'view_user_cart']);
+Route::middleware('checkSessionUser')->post('/shop/checkout', [OrderController::class, 'checkout']);
+Route::middleware('checkSessionUser')->get('/shop/product/{id}', [ProductController::class, 'products']);
+Route::middleware('checkSessionUser')->get('/shop', [ProductController::class, 'index']);
+
+
+
+
+
+//Admin Side
+Route::middleware('checkSessionAdmin')->get("/admin/products", [ProductController::class, 'product_create']);
+Route::middleware('checkSessionAdmin')->post("/admin/products/", [ProductController::class, 'store']);
+
+
+
+
+
+//Delivery Side
+
+
+Route::middleware('checkSessionDelivery')->get('delivery/dashboard', [DeliveryController::class, 'view_orders_dash']);
+Route::middleware('checkSessionDelivery')->delete('/delivery/dashboard/{id}', [DeliveryController::class, 'decline_order']);
+Route::middleware('checkSessionDelivery')->get('/delivery/{id}', [DeliveryController::class, 'deliveries']);
+Route::middleware('checkSessionDelivery')->put('/delivery/status/{id}', [DeliveryController::class, 'update_order_status']);
