@@ -46,6 +46,7 @@ Route::get("/dashboard", function () {
 //User Side
 
 Route::middleware('checkSessionUser')->post('/shop/view/{id}', [OrderController::class, 'push_cart']);
+Route::middleware('checkSessionUser')->delete('/shop/view/{id}', [OrderController::class, 'delete_item']); //kevs
 Route::middleware('checkSessionUser')->get('/shop/view/', [OrderController::class, 'view_user_cart']);
 Route::middleware('checkSessionUser')->post('/shop/checkout', [OrderController::class, 'checkout']);
 Route::middleware('checkSessionUser')->get('/shop/product/{id}', [ProductController::class, 'products']);
