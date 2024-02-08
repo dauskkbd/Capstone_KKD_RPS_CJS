@@ -17,32 +17,47 @@ class OrderController extends Controller
     public function checkout()
     {
         $order = new Order;
-        $order->user_id = 4;
+        $order->user_id = Session::get('user_id');
         $order->status = 'waiting';
         $order->save();
 
-        Cart::where('user_id', 4)->delete();
+        Cart::where('user_id', Session::get('user_id'))->delete();
+
+        UsersCart::where("user_id", "=",  Session::get('user_id'))
+            ->whereNull('order_id')
+            ->update(
+                [
+                    'order_id' => $order->order_id
+                ]
+            );
 
         return redirect('/shop');
     }
 
+    public function delete_item(string $id)
+    {
+        $cart_item = Cart::where('product_id', '=', $id)
+            ->delete();
+
+        return redirect('/shop/view');
+    }
 
 
     public function push_cart(Request $r, string $id)
     {
-        $user_cart = new Cart;
-        $user_cart->user_id = 4;
-        $user_cart->product_id = $id;
-        $user_cart->quantity = $r->input('order_' . $id);
-        $user_cart->save();
+        $cart = new Cart;
+        $cart->user_id = Session::get('user_id');
+        $cart->product_id = $id;
+        $cart->quantity = $r->input('order_' . $id);
+        $cart->save();
 
         $user_cart = new UsersCart;
-        $user_cart->user_id = 4;
+        $user_cart->user_id = Session::get('user_id');
         $user_cart->product_id = $id;
         $user_cart->quantity = $r->input('order_' . $id);
         $user_cart->save();
 
-        return redirect('/shop')->with('success', 'item was added to cart');
+        return redirect('/shop');
     }
 
 
@@ -58,7 +73,7 @@ class OrderController extends Controller
             ->select('*')
             ->join('users', 'carts.user_id', '=', 'users.user_id')
             ->join('products', 'carts.product_id', '=', 'products.product_id')
-            ->where('carts.user_id', '=', 4)
+            ->where('carts.user_id', '=', Session::get('user_id'))
             ->get(); //queries all items related to order of user
 
         return view('checkout', compact('cart'));
