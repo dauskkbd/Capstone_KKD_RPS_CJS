@@ -69,11 +69,6 @@
                         <a href="https://www.google.com/" target="_blank" type="button" class="btn btn-floating btn-dark btn-lg" id="icon_4"><i class="fab fa-google-plus-g"></i></a>
                         <!-- Linkedin -->
                     </div>
-                    <a
-                class="footer_right_link"
-                href="https://www.instagram.com/"
-                target="_blank"
-                >
                 </div>
                 <!--Grid column-->
             </div>
@@ -84,7 +79,7 @@
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             © 2023 Copyright:
-            <a class="text-dark">Roll and Play</a><br />
+            Roll and Play<br />
             <p>Kevin Kenneth Daus |
                 Rendell Soberano |
                 Christian Jay Salvino</p>

@@ -22,10 +22,7 @@
 </style>
 
 <script>
-const activePage = window.location.pathname;
-const navLinks = document.querySelectorAll('#nav-link').forEach(link => {
-    console.log(link.href);
-});
+
 </script>
 
 <!-- Navbar -->
@@ -82,7 +79,7 @@ const navLinks = document.querySelectorAll('#nav-link').forEach(link => {
                 </ul>
             </div>
             <div id="name">
-                <strong>John Sturgis</strong>
+                <strong>{{Session::get('first_name')}} {{Session::get('last_name')}}</strong>
             </div>
             <!-- Avatar -->
             

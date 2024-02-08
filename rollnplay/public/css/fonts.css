@@ -32,16 +32,35 @@
     text-shadow: #00bf63 1px 1px 2px;
 }
 
+
+
+#n1 :active {
+    text-shadow: #2148d1 1px 1px 2px;
+}
+#n2 :active {
+    text-shadow: #ff3333 1px 1px 2px;
+}
+#n3 :active {
+    text-shadow: #fdd91f 1px 1px 2px;
+}
+#n4 :active {
+    text-shadow: #00bf63 1px 1px 2px;
+}
+
 /* footer */
 #icon_1 :hover {
-    text-shadow: #2148d1 1px 1px 5px;
+    background: #2148d1;
+    border-radius: 50%;
 }
 #icon_2 :hover {
-    text-shadow: #ff3333 1px 1px 5px;
+    background: #ff3333;
+    border-radius: 50%;
 }
 #icon_3 :hover {
-    text-shadow: #fdd91f 1px 1px 5px;
+    background: #fdd91f;
+    border-radius: 50%;
 }
 #icon_4 :hover {
-    text-shadow: #00bf63 1px 1px 5px;
+    background: #00bf63;
+    border-radius: 50%;
 }

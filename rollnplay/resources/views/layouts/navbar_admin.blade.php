@@ -70,7 +70,7 @@
                 </ul>
             </div>
             <div id="name">
-                <strong>John Sturgis</strong>
+                <strong>{{Session::get('first_name')}} {{Session::get('last_name')}}</strong>
             </div>
             <!-- Avatar -->
             

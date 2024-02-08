@@ -12,10 +12,10 @@
     
 @include('layouts/navbar')
     {{-- hero banner section --}}
-
+<div class="seperator">
     <div class="container" id="hero_banner_section">
         <div id="banner_header">
-            <h1>Ready to Roll&Play?</h1>
+            <h1 class="text_heading">Ready to Roll&Play?</h1>
         </div>
         <div class="row">
             <div class="col-lg-6 col-md-12 col-12 carousel slide" data-mdb-ride="carousel" data-mdb-carousel-init data-mdb-interval="5000">
@@ -46,12 +46,13 @@
             </div>
         </div>
     </div>
+</div>
 
     {{-- shop by category section --}}
     
     <div class="container" id="shop_by_category_container">
         <div id="shop_by_category_header">
-            <h1>Shop by Category</h1>
+            <h1 class="text_heading">Shop by Category</h1>
         </div>
         <div id="shop_by_category_section">
             <div class="row">
@@ -116,7 +117,7 @@
     <div class="container" id="something_you_might_like">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
-                <h1>Something you might like</h1>
+                <h1 class="text_heading">Something you might like</h1>
             </div>
         </div>
     </div>
@@ -139,18 +140,19 @@
                         <h4 id="lg_description"><strong> One Night Ultimate Werewolf Daybreak by Ted Alspach</strong></h4>
                         <p class="suggested_game_price"><strong>₱1,400.00</strong></p>
                         <form action="" class="number-input-form">
-                            <span class="btn decrease-btn">-</span>
+                            <span class="btn decrease-btn"><span class="sm_text">-</span></span>
                             <input type="text" class="order-number" min="0" max="9" value="0">
-                            <span class="btn increase-btn">+</span>
-                            <span class="btn add-to-cart">Add to cart</span>
+                            <span class="btn increase-btn"><span class="sm_text">+</span></span>
+                            <span class="btn add-to-cart"><span class="sm_text">Add to cart</span></span>
                         </form>
                         <form action="" class="number-input-form">
-                            <span class="btn buy-now">Buy Now</span>
+                            <span class="btn buy-now"><span class="sm_text">Buy Now</span></span>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+        <hr/>
 
 
     <div class="container d-lg-none d-md-block d-block suggested-game-container-sm">
@@ -180,10 +182,10 @@
                         <h4 id="sm_description"><strong>One Night Ultimate Werewolf Daybreak by Ted Alspach</strong></h4>
                         <p class="suggested_game_price"><strong>₱1,400.00</strong></p>
                         <form action="" class="number-input-form">
-                            <span class="btn decrease-btn">-</span>
+                            <button class="btn decrease-btn">-</button>
                             <input type="text" class="order-number" min="0" max="9" value="0">
-                            <span class="btn increase-btn">+</span>
-                            <span class="btn add-to-cart">Add to cart</span>
+                            <button class="btn increase-btn">+</button>
+                            <button class="btn add-to-cart">Add to cart</button>
                         </form>
                         <form action="" class="number-input-form">
                             <span class="btn buy-now">Buy Now</span>
@@ -196,8 +198,8 @@
     <div class="container visit-shop">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
-                <h1>Visit our shop to find out more</h1>
-                <button class="btn btn-success mt-3">Visit Shop</button>
+                <h1 class="text_heading">Visit our shop to find out more...</h1>
+                <a href="#"><button type="button" class="btn " data-mdb-ripple-init><span id="text_button">SHOP</span></button></a>
             </div>
         </div>
     </div>
