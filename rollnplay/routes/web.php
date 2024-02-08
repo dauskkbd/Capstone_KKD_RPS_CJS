@@ -56,7 +56,7 @@ Route::middleware('checkSessionUser')->get('/shop', [ProductController::class, '
 
 
 
-//Admin Side
+//Admin Sides
 Route::middleware('checkSessionAdmin')->get("/admin/products", [ProductController::class, 'product_create']);
 Route::middleware('checkSessionAdmin')->post("/admin/products/", [ProductController::class, 'store']);
 
