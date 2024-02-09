@@ -5,21 +5,44 @@
     @include("layouts/head")
     <title>Document</title>
     <style>
-        .gradient-custom {
-            /* fallback for old browsers */
-            background: #6a11cb;
-
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            background: linear-gradient(to right, rgba(64, 162, 227), rgba(120, 148, 97));
+       body{
+            font-family: "Poppins", sans-serif;
+            background-color: #D9D0C1
+        }
+        #div_con{
+            padding-top: 120px;
+            padding-bottom: 30px;
+        }
+        #register{
+            font-family: "Londrina Solid", sans-serif;
+            font-size: 40px;
+        }
+        #submit{
+            font-family: "Londrina Solid", sans-serif;
+            background-color: #8C564A;
+            color: #1d1c1a;
+            font-size: 20px;
         }
     </style>
+
+    <script>
+        $(document).ready(function (){
+            $password = $("#password").value();
+            $con_pw = $("con_pw").value();
+
+            if(password != con_pw){
+                $("#pass").text("Password did not match, Try again.")
+            }
+
+        });
+    </script>
 </head>
 
 <body>
     @include("layouts/navbar")
 
-    <section class="vh-100 gradient-custom">
-        <div class="container py-5 h-100">
+    <section class=" gradient-custom">
+        <div class="container" id="div_con">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card bg-dark text-white" style="border-radius: 1rem;">
@@ -27,53 +50,63 @@
                             <form action="/register" method="POST">
                                 @csrf
 
-                                <div class="mb-md-5 mt-md-5 ">
-                                    <h2 class="fw-bold mb-2 text-uppercase">Register</h2>
+                                <div class="mb-md-4 mt-md-4 ">
+                                    <h2 class="fw-bold mb-2 text-uppercase" id="register">Register</h2>
                                     <p class="text-white-50 mb-5">Please fill up the form to register!</p>
-                                    
-                                    <div class="form-outline form-white mb-4">
-                                        <input type="text" id="first_name" class="form-control form-control-lg" name="first_name"/>
-                                        <label class="form-label" for="first_name">First Name</label>
-                                    </div>
+                                    <div class="input-group">
+                                        <div class="form-outline form-white mb-2" data-mdb-input-init>
+                                            <input type="text" id="first_name" class="form-control" name="first_name" required/>
+                                            <label class="form-label" for="first_name">First Name</label>
+                                        </div>
 
-                                    <div class="form-outline form-white mb-2">
-                                        <input type="text" id="last_name" class="form-control form-control-lg" name="last_name"/>
-                                        <label class="form-label" for="last_name">Last Name</label>
-                                    </div>
+                                        <div class="form-outline form-white mb-2" data-mdb-input-init>
+                                            <input type="text" id="last_name" class="form-control" name="last_name" required/>
+                                            <label class="form-label" for="last_name">Last Name</label>
+                                        </div>
+                                    </div>  
 
-                                    <div class="form-outline form-white mb-4">
-                                        <input type="email" id="email" class="form-control form-control-lg" name="email"/>
+                                    <div class="form-outline form-white mb-2" data-mdb-input-init>
+                                        <input type="email" id="email" class="form-control" name="email" required/>
                                         <label class="form-label" for="email">Email</label>
                                     </div>
 
-                                    <div class="form-outline form-white mb-4">
-                                        <input type="text" id="mobile" class="form-control form-control-lg" name="mobile"/>
+                                    <div class="form-outline form-white mb-2" data-mdb-input-init>
+                                        <input type="text" id="mobile" class="form-control" name="mobile" required/>
                                         <label class="form-label" for="mobile">Mobile Number</label>
                                     </div>
 
-                                    <div class="form-outline form-white mb-4">
-                                        <input type="text" id="province" class="form-control form-control-lg" name="province"/>
+                                    <div class="form-outline form-white mb-2" data-mdb-input-init>
+                                        <input type="text" id="province" class="form-control" name="province" required/>
                                         <label class="form-label" for="province">Province</label>
                                     </div>
-
-                                    <select class="browser-default custom-select" name="role">
-                                        <option selected disabled>Open this select menu</option>
-                                        <option value="user">User</option>
-                                        <option value="admin" disabled>Admin</option>
-                                        <option value="delivery" disabled>Delivery</option>
-                                    </select>
-
-                                    <div class="form-outline form-white mb-4">
-                                        <input type="password" id="password" class="form-control form-control-lg" name="pw" />
+                                    {{--  --}}
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="role" id="inlineRadio1" value="1" required/>
+                                        <label class="form-check-label" for="inlineRadio1">User</label>
+                                      </div>
+                                      
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="role" id="inlineRadio2" value="2" disabled/>
+                                        <label class="form-check-label" for="inlineRadio2">Delivery</label>
+                                      </div>
+                                      
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="role" id="inlineRadio3" value="3" disabled />
+                                        <label class="form-check-label" for="inlineRadio3">Admin</label>
+                                      </div>
+                                    {{--  --}}
+                                    <div class="form-outline form-white mb-2" data-mdb-input-init>
+                                        <input type="password" id="password" class="form-control " name="pw" required/>
                                         <label class="form-label" for="password">Password</label>
                                     </div>
 
-                                    <div class="form-outline form-white mb-4">
-                                        <input type="password" id="con_pw" class="form-control form-control-lg" name="con_pw" />
+                                    <div class="form-outline form-white mb-2" data-mdb-input-init>
+                                        <input type="password" id="con_pw" class="form-control" name="con_pw" required/>
                                         <label class="form-label" for="con_pw">Confirm Password</label>
                                     </div>
 
-                                    <input class="btn btn-outline-light btn-lg px-5" type="submit" value="submit"/>
+                                    <input class="btn btn-lg px-5" type="submit" value="submit" id="submit"/>
+                                    <p id="pass"></p>
                                 </div>
                             </form>
                         </div>
