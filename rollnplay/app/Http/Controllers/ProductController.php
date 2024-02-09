@@ -11,6 +11,18 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+
+    public function edit_products(string $id)
+    {
+        $products = Product::query()
+            ->select('*')
+            ->where('product_id', '=', $id)
+            ->get()
+            ->first();
+
+        return view('product_edit', compact('products'));
+    }
+
     public function store(Request $r)
     {
         $p = new Product;

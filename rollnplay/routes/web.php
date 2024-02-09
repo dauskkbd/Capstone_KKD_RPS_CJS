@@ -36,22 +36,20 @@ Route::get("/home", function () {
 Route::get("/contact", function () {
     return view("contact");
 });
-Route::get("/dashboard", function () {
-    return view("dashboard");
-});
-
+Route::get('/dashboard', [AdminController::class, 'show_dashboard']);
 
 
 
 //User Side
-
+Route::middleware('checkSessionUser')->get('/shop/view/delivery', [OrderController::class, 'view_delivery']);
+Route::middleware('checkSessionUser')->put('/shop/view/{id}', [OrderController::class, 'edit_item']);
 Route::middleware('checkSessionUser')->post('/shop/view/{id}', [OrderController::class, 'push_cart']);
 Route::middleware('checkSessionUser')->delete('/shop/view/{id}', [OrderController::class, 'delete_item']); //kevs
 Route::middleware('checkSessionUser')->get('/shop/view/', [OrderController::class, 'view_user_cart']);
 Route::middleware('checkSessionUser')->post('/shop/checkout', [OrderController::class, 'checkout']);
+Route::middleware('checkSessionUser')->put('/shop/product/{id}', [ProductController::class, 'edit_products']);
 Route::middleware('checkSessionUser')->get('/shop/product/{id}', [ProductController::class, 'products']);
 Route::middleware('checkSessionUser')->get('/shop', [ProductController::class, 'index']);
-
 
 
 
@@ -72,8 +70,8 @@ Route::middleware('checkSessionAdmin')->get('/admin/panel/products/edit/{id}', [
 Route::middleware('checkSessionAdmin')->delete('/admin/panel/users/{id}', [AdminController::class, 'delete_user']);
 Route::middleware('checkSessionAdmin')->delete('/admin/panel/products/{id}', [AdminController::class, 'delete_product']);
 
-
-
+//adding this route to admin side
+Route::get('/dashboard', [AdminController::class, 'show_dashboard']);
 
 
 
