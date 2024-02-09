@@ -5,7 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DeliveryController;
-
+use App\Http\Controllers\AdminController;
 
 
 
@@ -57,8 +57,21 @@ Route::middleware('checkSessionUser')->get('/shop', [ProductController::class, '
 
 
 //Admin Sides
+
+Route::middleware('checkSessionAdmin')->get('/admin/panel/orders', [AdminController::class, 'admin_panel_orders']);
+Route::middleware('checkSessionAdmin')->get('/admin/panel/orders/{id}', [AdminController::class, 'admin_view_orders']);
+Route::middleware('checkSessionAdmin')->put('/admin/panel/orders/status/{id}', [AdminController::class, 'admin_update_order_status']);
 Route::middleware('checkSessionAdmin')->get("/admin/products", [ProductController::class, 'product_create']);
 Route::middleware('checkSessionAdmin')->post("/admin/products/", [ProductController::class, 'store']);
+Route::middleware('checkSessionAdmin')->get('/admin/panel/users', [AdminController::class, 'admin_panel_users']);
+Route::middleware('checkSessionAdmin')->get('/admin/panel/products', [AdminController::class, 'admin_panel_products']);
+Route::middleware('checkSessionAdmin')->put('/admin/panel/users/edit/{id}', [AdminController::class, 'edit_user']);
+Route::middleware('checkSessionAdmin')->get('/admin/panel/users/edit/{id}', [AdminController::class, 'edit_user_form']);
+Route::middleware('checkSessionAdmin')->put('/admin/panel/products/edit/{id}', [AdminController::class, 'edit_product']);
+Route::middleware('checkSessionAdmin')->get('/admin/panel/products/edit/{id}', [AdminController::class, 'edit_product_form']);
+Route::middleware('checkSessionAdmin')->delete('/admin/panel/users/{id}', [AdminController::class, 'delete_user']);
+Route::middleware('checkSessionAdmin')->delete('/admin/panel/products/{id}', [AdminController::class, 'delete_product']);
+
 
 
 
