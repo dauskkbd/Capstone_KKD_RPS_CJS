@@ -25,29 +25,45 @@
     @include("layouts/script")
 </body>
 <script>
-    var ctx = document.getElementById('bar_chart').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: @json($data['labels']),
-            datasets: [{
-                label: 'Profit',
-                data: @json($data['data']),
-                backgroundColor: ['rgba(75, 192, 192, 1)',
-                'rgba(100, 192, 0, 1)',
-                'rgba(20, 0, 192, 1)',
-                'rgba(100, 192, 61, 1)'],
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
+// Your Chart initialization code
+var ctx = document.getElementById('bar_chart').getContext('2d');
+
+// Function to generate a color based on a string input
+function getColorFromString(str) {
+    var hash = 0;
+    for (var i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    var color = '#';
+    for (var i = 0; i < 3; i++) {
+        var value = (hash >> (i * 8)) & 0xFF;
+        color += ('00' + value.toString(16)).substr(-2);
+    }
+    return 'rgba(' + parseInt(color.substr(1, 2), 16) + ',' + parseInt(color.substr(3, 2), 16) + ',' + parseInt(color.substr(5, 2), 16) + ', 1)';
+}
+
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: @json($data['labels']),
+        datasets: [{
+            label: 'Profit',
+            data: @json($data['data']),
+            backgroundColor: function(context) {
+                var date = context.chart.data.labels[context.dataIndex];
+                return getColorFromString(date); // Generate color based on the date
+            },
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
             }
         }
-    });
+    }
+});
 </script>
 </html>

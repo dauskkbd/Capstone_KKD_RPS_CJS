@@ -50,12 +50,23 @@ class OrderController extends Controller
 
     public function delete_item(string $id)
     {
-        $cart_item = Cart::where('product_id', '=', $id)
+        Cart::where('product_id', '=', $id)
             ->delete();
 
         return redirect('/shop/view');
     }
 
+    public function edit_item(Request $r, string $id)
+    {
+        Cart::where('product_id', '=', $id)
+            ->update(
+                [
+                    'quantity' => $r->input('order_' . $id)
+                ]
+            );
+
+        return redirect('/shop/view');
+    }
 
     public function push_cart(Request $r, string $id)
     {
@@ -78,18 +89,19 @@ class OrderController extends Controller
     public function view_user_cart(Request $r)
     {
 
-        $product = Product::query()
-            ->select('*')
-            ->where('stock', '>', '0')
-            ->get();  //gets all the product data with stock greater than zero
+        $grand_total = Cart::query()
+            ->select(DB::raw('SUM(products.price * carts.quantity) as grand_total'))
+            ->join('users', 'carts.user_id', '=', 'users.user_id')
+            ->join('products', 'carts.product_id', '=', 'products.product_id')
+            ->get();
 
         $cart = Cart::query()
             ->select('*')
             ->join('users', 'carts.user_id', '=', 'users.user_id')
             ->join('products', 'carts.product_id', '=', 'products.product_id')
             ->where('carts.user_id', '=', Session::get('user_id'))
-            ->get(); //queries all items related to order of user
+            ->get();
 
-        return view('checkout', compact('cart'));
+        return view('checkout', compact('cart', 'grand_total'));
     }
 }

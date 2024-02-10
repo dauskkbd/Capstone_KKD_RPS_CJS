@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  @include("layouts/head")
+  <title>Document</title>
+</head>
+
+<body>
+  @include("layouts/navbar")
+
+  <div class="container" id="content">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, facere nihil. Nihil laborum aut sapiente dolorum at consequatur, eius animi consequuntur inventore obcaecati voluptatum ad. At quos dolorum, rerum optio magni ipsum minus, quas esse praesentium, fugit veniam! Aliquam architecto magni tempore vel incidunt ipsa eum temporibus odit numquam cumque harum minus quidem aspernatur id illum ratione, nemo sunt nulla consequatur tenetur perferendis. Iste neque vel magnam inventore, corrupti ipsam eum dignissimos! Totam libero nisi id sit voluptatum ipsa a doloribus consequuntur magnam assumenda nemo sapiente cum, in modi enim minima facilis exercitationem quo vero, at ut quasi veniam. Natus perferendis iste laborum nesciunt aperiam voluptas ab, eius minima, nisi sequi maiores sint ipsum praesentium odit, cupiditate esse expedita in exercitationem ipsam vero deserunt aliquam quisquam! Illo laborum quidem nisi laudantium nihil voluptas doloribus eius iusto tempore quos autem quod provident est, perspiciatis molestias dolores beatae error minima. Delectus iste fugiat vitae, dolor ut ducimus! Autem, provident vitae? Suscipit obcaecati labore eveniet asperiores rerum repellat ab maiores illum quo repudiandae dolorum, aspernatur commodi. Repudiandae nostrum, repellendus incidunt itaque molestiae veritatis quaerat tempore exercitationem quod excepturi explicabo, delectus quia aliquam voluptates ea fuga alias! Ipsam doloribus rem quisquam officiis ab totam qui, quis, laudantium aliquam sapiente eveniet dolores vero, labore aperiam sint molestiae autem voluptas voluptatem repellendus similique sunt ratione adipisci nemo? Enim molestias accusantium exercitationem vel aspernatur aperiam modi repellat nesciunt accusamus architecto magni, illum quam eaque adipisci? Quibusdam pariatur nisi neque, excepturi ipsam a aut aperiam laboriosam ipsa perspiciatis voluptates ea. Debitis nesciunt totam animi ea? Consectetur placeat quaerat quo molestiae praesentium nisi veritatis saepe tempore deserunt iure quidem beatae, voluptatem cum consequuntur omnis rerum voluptas ullam reprehenderit modi qui illum. Temporibus id, molestias, soluta, dignissimos facere cum veniam pariatur laboriosam rem distinctio dolorum. Incidunt voluptatibus vel quis nobis, a commodi nam. Illo dolor consequatur autem voluptatum debitis ipsa explicabo! Velit tenetur totam, culpa quasi in accusantium odit, voluptas ex maxime sint magni. Repellendus ea voluptatibus eum non dolore. Magni nam ipsa delectus dolores quia officiis ipsam fuga sunt saepe dignissimos maiores mollitia illo at, est fugiat laborum excepturi dolorem cupiditate odit! Sint, rem. Eveniet necessitatibus tempora cum aspernatur magni culpa quaerat ea, reiciendis illo totam iusto commodi a recusandae quia nostrum quo rerum ab unde placeat! Omnis natus maxime sed! Quidem corrupti tempore ea, distinctio hic minus placeat, maxime laboriosam aperiam, quibusdam totam nulla! Ducimus ex suscipit necessitatibus deserunt molestiae placeat architecto quidem ut iure explicabo? Perferendis, porro sequi! Ea, laboriosam eligendi. Iure, et, repellat tempora sequi maiores similique qui soluta nostrum nihil nesciunt repellendus molestias. Dolore et distinctio consectetur? Ipsam quisquam, placeat rem blanditiis ullam dolorum commodi ratione sequi voluptate nobis vero, nam expedita perspiciatis minima delectus a, animi dolor earum temporibus itaque autem consequatur reiciendis. Vitae eum, aut ipsam qui distinctio consequuntur tenetur voluptate ea voluptas praesentium asperiores perspiciatis eaque rerum optio atque vel dicta, cumque aliquid odit, laudantium explicabo cupiditate quibusdam. Error incidunt facere nulla in architecto, rem deleniti sequi asperiores quidem maiores provident temporibus?
+  </div>
+
+  @include("layouts/footer")
+  @include("layouts/script")
+</body>
+
+</html>

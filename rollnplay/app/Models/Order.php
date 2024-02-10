@@ -26,7 +26,6 @@ class Order extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'time_placed' => 'datetime',
 		'user_id' => 'int'
 	];
 

@@ -13,6 +13,34 @@ use App\Models\Product;
 class AdminController extends Controller
 {
 
+    public function show_dashboard()
+    {
+        $orders = Order::query()
+            ->select(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d') AS time_placed"), DB::raw('SUM(p.price - p.w_price) AS total_profit'))
+            ->join('users_carts as uc', 'uc.order_id', '=', 'orders.order_id')
+            ->join('products as p', 'p.product_id', '=', 'uc.product_id')
+            ->groupBy(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d')"))
+            ->get();
+
+
+        $profit = [];
+        foreach ($orders as $o) {
+            array_push($profit, $o->total_profit);
+        }
+
+        $time_placed = [];
+        foreach ($orders as $o) {
+            array_push($time_placed, $o->time_placed);
+        }
+
+        $data = [
+            'labels' => $time_placed,
+            'data' => $profit
+        ];
+
+        return view('admin_dashboard', compact('data'));
+    }
+
     public function admin_view_orders(string $id)
     {
         $deliver = Order::query()
