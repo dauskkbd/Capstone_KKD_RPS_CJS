@@ -35,7 +35,10 @@
             color:#1d1c1a;
             margin-top: 20px;
             font-size: 1.1em;
-            
+        }
+        #message{
+            color:#1d1c1a;
+
         }
     </style>
 

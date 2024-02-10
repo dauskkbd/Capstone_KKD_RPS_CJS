@@ -38,13 +38,13 @@
                     <a class="nav-link" href="/dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item" id="n2">
-                    <a class="nav-link" href="/orders">Orders</a>
+                    <a class="nav-link" href="/admin/panel/orders">Orders</a>
                 </li>
                 <li class="nav-item" id="n3">
-                    <a class="nav-link" href="/product">Products</a>
+                    <a class="nav-link" href="/admin/panel/products">Products</a>
                 </li>
                 <li class="nav-item" id="n4">
-                    <a class="nav-link" href="/users">Users</a>
+                    <a class="nav-link" href="/admin/panel/users">Users</a>
                 </li>
             </ul>
             <!-- Left links -->

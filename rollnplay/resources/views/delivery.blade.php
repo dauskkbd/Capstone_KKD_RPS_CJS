@@ -37,7 +37,7 @@
         }
         #submit{
             font-family: "Londrina Solid", sans-serif;
-font-size: 20px;
+            font-size: 20px;
             background-color: #8C564A;
             color: #1d1c1a;
             
