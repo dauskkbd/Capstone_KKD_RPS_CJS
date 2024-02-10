@@ -2,19 +2,16 @@
 <html lang="en">
 <head>
     @include('layouts/head')
-    <title>About</title>
+    <title>About Us</title>
 
     <style>
       body{
         font-family: "Poppins", sans-serif;
         background-color: #D9D0C1
       }
-
-
       #roll {
         max-width: 250px;
       }
-
       #integrity, #community, #compassion, #curiosity, #about{
         font-size: 3rem;
       }
@@ -48,7 +45,6 @@
         color: #1d1c1a;
         font-family: "Londrina Solid", sans-serif;
       }
-      
     </style>
    
 </head>
