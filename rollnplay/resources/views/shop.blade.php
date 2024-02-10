@@ -12,11 +12,11 @@
         }
 
         .sorting-section-container{
-            display: flex;
-            justify-content: right;
+            display: block;
             margin-top: 5%;
             width: 94%;
         }
+
 
         .filters-cards-container{
             width: 95%;
@@ -33,6 +33,28 @@
         .cards{
             margin-left: 1%;
         }
+
+        .custom-dropdown .custom-select {
+        border: none;
+        border-radius: 5px;
+        padding: 8px 15px;
+        background-color: #f8f9fa;
+        color: #000;
+        font-size: 16px;
+        font-weight: bold;
+        }
+
+        .custom-dropdown .custom-select:focus {
+        outline: none;
+        box-shadow: none;
+        }
+
+        .custom-dropdown .custom-select option {
+        background-color: #fff; 
+        color: #000;
+        font-size: 16px;
+        font-weight: bold;
+        }
     </style>
     <script type="module">
         import { Ripple, initMDB } from "mdb-ui-kit";
@@ -41,7 +63,7 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function() {
-        let maxLength = 100; // Set the maximum number of characters
+        let maxLength = 100;
         let descriptionElements = document.querySelectorAll(".card-text.description");
         
         descriptionElements.forEach(function(element) {
@@ -58,7 +80,9 @@
 <body>
     @include('layouts/navbar')
 
+
     {{-- hero banner section --}}
+    
     <div class="container-fluid shop-banner-container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
@@ -69,53 +93,41 @@
 
     <div class="container-fluid sorting-section-container">
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-12">
-                <div class="btn-group dropstart">
-                    <button
-                    type="button"
-                    class="btn btn-primary dropdown-toggle"
-                    data-mdb-dropdown-init
-                    data-mdb-ripple-init aria-expanded="false">
-                      Dropleft
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      <li><hr class="dropdown-divider" /></li>
-                      <li><a class="dropdown-item" href="#">Separated link</a></li>
-                    </ul>
-                  </div>
+            <div class="col-lg-2 col-md-3 col-6 order-1">
+                <div class="btn-group dropend custom-dropdown">
+                    <select class="btn btn-primary custom-select" onchange="location = this.value;">
+                        <option value="#">Filter By</option>
+                        <option value="?genre=All">All</option>
+                        <option value="?genre=Living+Card+Games">Living Card Games</option>
+                        <option value="?genre=Adventure+Games">Adventure Games</option>
+                        <option value="?genre=Family+Games">Family Games</option>
+                        <option value="?genre=Escape+Games">Escape Games</option>
+                        <option value="?genre=Party+Games">Party Games</option>
+                        <option value="?genre=Expert+Games">Expert Games</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-6 order-1 ">    
+                <div class="btn-group dropend custom-dropdown">
+                    <select class="btn btn-primary custom-select" onchange="location = this.value;">
+                        <option value="#">Sort By</option>
+                        <option value="?sort=az">A-Z Alphabetically</option>
+                        <option value="?sort=za">Z-A Alphabetically</option>
+                        <option value="?sort=high">Highest Price</option>
+                        <option value="?sort=low">Lowest Price</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>
 
+    
+
     {{-- filter and cards section --}}
+
     <div class="container-fluid filters-cards-container">
         <div class="row">
-            <div class="col-lg-2 filters">
-                Filter by:
-                <div>
-                    <input type="checkbox" name="filter_checkbox"> In stock<br>
-                    <input type="checkbox" name="accessories"> Accessories ()<br>
-                    <input type="checkbox" name="adventure_games"> Adventure Games (53)<br>
-                    <input type="checkbox" name="board_game_accessories"> Board Game Accessories (26)<br>
-                    <input type="checkbox" name="board_game_promos"> Board Game Promos (1)<br>
-                    <input type="checkbox" name="board_games"> Board Games (11)<br>
-                    <input type="checkbox" name="card_games"> Card Games (2)<br>
-                    <input type="checkbox" name="escape_games"> Escape Games (11)<br>
-                    <input type="checkbox" name="expert_games"> Expert Games (91)<br>
-                    <input type="checkbox" name="family_games"> Family Games (126)<br>
-                    <input type="checkbox" name="kids_games"> Kids Games (25)<br>
-                    <input type="checkbox" name="lcg"> LCG (1)<br>
-                    <input type="checkbox" name="living_card_games"> Living Card Games (48)<br>
-                    <input type="checkbox" name="party_games"> Party Games (46)<br>
-                    <input type="checkbox" name="reservation"> Reservation (1)<br>
-                    <input type="checkbox" name="shirts"> Shirts (1)<br>
-                    <input type="checkbox" name="strategy_games"> Strategy Games (137)
-                </div>
-            </div>
-            <div class="col-lg-10 cards-container">
+            <div class="col-lg-12 cards-container">
                 <div class="cards">
                     <div class="row">
                       @foreach ($products as $p)
@@ -140,6 +152,7 @@
             </div>
         </div>
     </div>
+    {{-- {{$products -> links('pagination::bootstrap-5')}} --}}
 
     @include('layouts/script')
     @include('layouts/footer')

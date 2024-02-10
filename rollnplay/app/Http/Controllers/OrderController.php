@@ -30,22 +30,28 @@ class OrderController extends Controller
 
     public function checkout()
     {
-        $order = new Order;
-        $order->user_id = Session::get('user_id');
-        $order->status = 'waiting';
-        $order->save();
+        $user_id = Session::get('user_id');
 
-        Cart::where('user_id', Session::get('user_id'))->delete();
+        if ($user_id) {
+            $order = new Order;
+            $order->user_id = Session::get('user_id');
+            $order->status = 'waiting';
+            $order->save();
 
-        UsersCart::where("user_id", "=",  Session::get('user_id'))
-            ->whereNull('order_id')
-            ->update(
-                [
-                    'order_id' => $order->order_id
-                ]
-            );
+            Cart::where('user_id', Session::get('user_id'))->delete();
 
-        return redirect('/shop');
+            UsersCart::where("user_id", "=",  $user_id)
+                ->whereNull('order_id')
+                ->update(
+                    [
+                        'order_id' => $order->order_id
+                    ]
+                );
+
+            return redirect('/shop');
+        } else {
+            abort(404);
+        }
     }
 
     public function delete_item(string $id)
@@ -88,20 +94,25 @@ class OrderController extends Controller
 
     public function view_user_cart(Request $r)
     {
+        $user_id = Session::get('user_id');
 
-        $grand_total = Cart::query()
-            ->select(DB::raw('SUM(products.price * carts.quantity) as grand_total'))
-            ->join('users', 'carts.user_id', '=', 'users.user_id')
-            ->join('products', 'carts.product_id', '=', 'products.product_id')
-            ->get();
+        if ($user_id) {
+            $grand_total = Cart::query()
+                ->select(DB::raw('SUM(products.price * carts.quantity) as grand_total'))
+                ->join('users', 'carts.user_id', '=', 'users.user_id')
+                ->join('products', 'carts.product_id', '=', 'products.product_id')
+                ->get();
 
-        $cart = Cart::query()
-            ->select('*')
-            ->join('users', 'carts.user_id', '=', 'users.user_id')
-            ->join('products', 'carts.product_id', '=', 'products.product_id')
-            ->where('carts.user_id', '=', Session::get('user_id'))
-            ->get();
+            $cart = Cart::query()
+                ->select('*')
+                ->join('users', 'carts.user_id', '=', 'users.user_id')
+                ->join('products', 'carts.product_id', '=', 'products.product_id')
+                ->where('carts.user_id', '=', $user_id)
+                ->get();
 
-        return view('checkout', compact('cart', 'grand_total'));
+            return view('checkout', compact('cart', 'grand_total'));
+        } else {
+            abort(404);
+        }
     }
 }

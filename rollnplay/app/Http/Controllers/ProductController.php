@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use Kyslik\ColumnSortable\Sortable;
 
 class ProductController extends Controller
 {
+    use Sortable;
 
     public function edit_products(string $id)
     {
@@ -59,11 +61,29 @@ class ProductController extends Controller
         return view('/product_show', compact('products'));
     }
 
-    public function index()
+    public function index(Request $r)
     {
-        $products = Product::query()
-            ->select('*')
-            ->get();
-        return view('shop', compact('products'));
+        $productsQuery = Product::query()->select('*');
+        $genreFilter = $r->filled('genre') ? $r->input('genre') : 'All';
+        $sortBy = $r->filled('sort') ? $r->input('sort') : null;
+
+        if ($genreFilter !== 'All') {
+            $productsQuery->where('genre', '=', $genreFilter);
+        }
+
+        // Sorting logic
+        if ($sortBy === 'az') {
+            $productsQuery->orderBy('name');
+        } elseif ($sortBy === 'za') {
+            $productsQuery->orderBy('name', 'DESC');
+        } elseif ($sortBy === 'high') {
+            $productsQuery->orderBy('price', 'DESC');
+        } elseif ($sortBy === 'low') {
+            $productsQuery->orderBy('price');
+        }
+
+        $products = $productsQuery->get();
+
+        return view('shop', compact('products', 'genreFilter'));
     }
 }

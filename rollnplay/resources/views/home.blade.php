@@ -21,26 +21,26 @@
             <div class="col-lg-6 col-md-12 col-12 carousel slide" data-mdb-ride="carousel" data-mdb-carousel-init data-mdb-interval="5000">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <a href=""><img src="/images/septima_resize.jpg" alt="blank image" class="img-fluid hero-banner"></a>
+                        <a href="{{ url('/shop/product/28') }}"><img src="/images/septima_resize.jpg" alt="blank image" class="img-fluid hero-banner"></a>
                     </div>
                     <div class="carousel-item">
-                        <a href=""><img src="/images/lord_of_the_rings_resize.jpg" alt="blank image" class="img-fluid hero-banner"></a>
+                        <a href="{{ url('/shop/product/3') }}"><img src="/images/lord_of_the_rings_resize.jpg" alt="blank image" class="img-fluid hero-banner"></a>
                     </div>
                     <div class="carousel-item">
-                        <a href=""><img src="/images/the-witcher-resize.jpg" alt="blank image" class="img-fluid hero-banner"></a>
+                        <a href="{{ url('/shop/product/14') }}"><img src="/images/the-witcher-resize.jpg" alt="blank image" class="img-fluid hero-banner"></a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-12">
                 <div class="row d-flex">
                     <div class="col-lg-6 col-md-6 col-6 square-banner-section">
-                        <a href=""><img src="/images/sleeping-gods.webp" alt="blank image" class="img-fluid square-banner"></a>
+                        <a href="{{ url('/shop/product/2') }}"><img src="/images/sleeping-gods.webp" alt="blank image" class="img-fluid square-banner"></a>
                     </div> 
                     <div class="col-lg-6 col-md-6 col-6 square-banner-section">
-                        <a href=""><img src="/images/ticket-to-ride.jpg" alt="blank image" class="img-fluid square-banner"></a>
+                        <a href="{{ url('/shop/product/19') }}"><img src="/images/ticket-to-ride.jpg" alt="blank image" class="img-fluid square-banner"></a>
                     </div>
                     <div class="col-lg-12 col-md-12 col-12 landscape-banner-section">
-                       <a href=""><img src="/images/tribes-of-the-wind-resize.webp" id="landscape_banner" alt="blank image" class="img-fluid"></a>
+                       <a href="{{ url('/shop/product/29') }}"><img src="/images/tribes-of-the-wind-resize.webp" id="landscape_banner" alt="blank image" class="img-fluid"></a>
                     </div>
                 </div>
             </div>
@@ -199,7 +199,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
                 <h1 class="text_heading">Visit our shop to find out more...</h1>
-                <a href="/shop"><button type="button" class="btn " data-mdb-ripple-init><span id="text_button">SHOP</span></button></a>
+                <a href="#"><button type="button" class="btn " data-mdb-ripple-init><span id="text_button">SHOP</span></button></a>
             </div>
         </div>
     </div>
