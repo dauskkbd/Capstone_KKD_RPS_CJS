@@ -199,7 +199,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
                 <h1 class="text_heading">Visit our shop to find out more...</h1>
-                <a href="#"><button type="button" class="btn " data-mdb-ripple-init><span id="text_button">SHOP</span></button></a>
+                <a href="/shop"><button type="button" class="btn " data-mdb-ripple-init><span id="text_button">SHOP</span></button></a>
             </div>
         </div>
     </div>

@@ -74,7 +74,9 @@ class UserController extends Controller
                 if (Session::get("role") == "admin") {
                     return redirect("/dashboard");
                 } else if (Session::get("role") == "user") {
-                    return redirect("/home");
+                    return redirect("/");
+                } else if (Session::get("role") == "delivery") {
+                    return redirect("/delivery/dashboard");
                 }
             } else {
                 return redirect("/login");

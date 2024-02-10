@@ -37,9 +37,6 @@
                 <li class="nav-item" id="n1">
                     <a class="nav-link" href="/delivery/dashboard">Deliveries</a>
                 </li>
-                <li class="nav-item" id="n2">
-                    <a class="nav-link" href="/summary">Order Summary</a>
-                </li>
                 <li class="nav-item" id="n3">
                     <a class="nav-link" href="/about">About Us</a>
                 </li>
@@ -88,7 +85,7 @@
                         <a class="dropdown-item" href="/register">Register</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/login">Logout</a>
+                        <a class="dropdown-item" href="/logout">Logout</a>
                     </li>
                 </ul>
             </div>

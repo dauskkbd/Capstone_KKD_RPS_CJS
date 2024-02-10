@@ -48,7 +48,7 @@ class OrderController extends Controller
                     ]
                 );
 
-            return redirect('/shop');
+            return redirect('/shop/view/');
         } else {
             abort(404);
         }

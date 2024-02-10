@@ -88,7 +88,7 @@
                         <a class="dropdown-item" href="/register">Register</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/login">Logout</a>
+                        <a class="dropdown-item" href="/logout">Logout</a>
                     </li>
                 </ul>
             </div>

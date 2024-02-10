@@ -43,7 +43,7 @@
             <!-- Left links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item" id="n1">
-                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item" id="n2">
                     <a class="nav-link" href="/shop">Shop</a>
@@ -97,7 +97,7 @@
                         <a class="dropdown-item" href="/register">Register</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/login">Logout</a>
+                        <a class="dropdown-item" href="/logout">Logout</a>
                     </li>
                 </ul>
             </div>

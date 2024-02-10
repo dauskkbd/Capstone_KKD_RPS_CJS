@@ -3,7 +3,7 @@
 
 <head>
     @include("layouts/head")
-    <title>Document</title>
+    <title>Register</title>
     <style>
        body{
             font-family: "Poppins", sans-serif;

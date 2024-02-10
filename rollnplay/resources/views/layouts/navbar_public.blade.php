@@ -43,7 +43,7 @@
             <!-- Left links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item" id="n1">
-                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item" id="n2">
                     <a class="nav-link" href="/shop">Shop</a>
@@ -79,7 +79,7 @@
                 </ul>
             </div>
             <div id="name">
-                <strong>{{Session::get('first_name')}} {{Session::get('last_name')}}</strong>
+                <strong></strong>
             </div>
             <!-- Avatar -->
             

@@ -27,6 +27,7 @@
         #contact{
             color: #D9D0C1;
             font-family: "Londrina Solid", sans-serif;
+            font-size: 3em;
         }
 
         #submit{
