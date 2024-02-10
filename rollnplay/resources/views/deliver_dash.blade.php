@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Delivery - Dashboard</title>
+    <title>Deliveries</title>
 
 <style>
 body{
     font-family: "Poppins", sans-serif;
-    background-color: #D9D0C1
+    background-color: #D9D0C1;
     }
 #div_con{
     padding-top: 100px;
@@ -18,7 +18,7 @@ body{
 }
 #head{
     font-family: "Londrina Solid", sans-serif;
-    font-size: 40px;
+    font-size: 2.5em;
     color: #1d1c1a;
 }
 #actions{
@@ -48,6 +48,10 @@ th{
 table, th, tr, td{
     background: #D9D0C1 !important;
 }
+#cap{
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
 
 
 
@@ -59,7 +63,9 @@ table, th, tr, td{
 <body>
 <div class="container" id="div_con">
     <h1 id="head" class="text-center">Deliveries</h1>
-    
+
+    @if(count($order) > 0)
+
     <table class="table table-hover">
         <tr >
             <th>Name</th>
@@ -69,8 +75,10 @@ table, th, tr, td{
             <th>Status</th>
             <th>Actions</th>
         </tr>
+        
+
         @foreach($order as $o)
-        <tr id="eee">
+        <tr>
             <td class="fw-bold mb-1" data-cell="name">{{$o -> last_name}}, {{$o -> first_name}}</td>
             <td data-cell="province">{{$o -> province}}</td>
             <td data cell="mobile">{{$o -> mobile}}</td>
@@ -98,15 +106,7 @@ table, th, tr, td{
             </td>
             
         </tr>
-        
-        @endforeach
-    </table>
-   
-</div>
-
-
-  
-  <!-- Modal -->
+        <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -128,9 +128,18 @@ table, th, tr, td{
       </div>
     </div>
   </div>
+        
+        @endforeach
+    </table>
 
+   @else
+    <div class="container">
+    <h1 class="text-center" id="cap">Currently, there are no deliveries scheduled or pending.</h1>
+    </div>
 
-    
+   @endif
+
+</div>
 
     @include('layouts/footer')
     @include('layouts/script')
