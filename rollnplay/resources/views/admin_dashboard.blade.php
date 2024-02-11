@@ -7,6 +7,10 @@
     <style>
         .admin-dashboard-container{
             margin-top: 10%;
+            margin-bottom: 5%;
+        }
+
+        .admin-card-container{
             margin-bottom: 10%;
         }
     </style>
@@ -15,9 +19,47 @@
     @include("layouts/navbar_admin")
     <div class="container admin-dashboard-container">
         <div class="row">
-            <div class="col-lg-10">
-                <h1>Admin Dashboard</h1>
-                <canvas id="bar_chart"></canvas>
+            <h1>Admin Dashboard</h1>
+            <div class="col-lg-6">
+                <canvas id="chart1"></canvas>
+            </div>
+            <div class="col-lg-6">
+                <canvas id="chart2"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="container admin-card-container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Best Seller</h5>
+                      <table class="table">
+                        <tr>
+                            <th>Name</th>
+                            <th>Product ID</th>
+                            <th>Product Sold</th>
+                        </tr>
+                        @foreach($user_cart as $uc)
+                        <tr>
+                            <td>{{$uc -> name}}</td>
+                            <td>{{$uc -> product_id}}</td>
+                            <td>{{$uc -> product_count}}</td>
+                        </tr>
+                        @endforeach()
+                      </table>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <button type="button" class="btn btn-primary" data-mdb-ripple-init>Button</button>
+                    </div>
+                  </div>
             </div>
         </div>
     </div>
@@ -26,7 +68,7 @@
 </body>
 <script>
 // Your Chart initialization code
-var ctx = document.getElementById('bar_chart').getContext('2d');
+var ctx = document.getElementById('chart1').getContext('2d');
 
 // Function to generate a color based on a string input
 function getColorFromString(str) {
@@ -66,4 +108,31 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
+<script>
+     var ctx = document.getElementById('chart2').getContext('2d');
+        var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: @json($prod_data['labels']),
+            datasets: [{
+                label: 'Data',
+                data: @json($prod_data['prod_data']),
+                backgroundColor: ['rgba(75, 192, 192, 1)',
+                'rgba(100, 192, 0, 1)',
+                'rgba(20, 0, 192, 1)',
+                'rgba(100, 192, 61, 1)'],
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>
+
 </html>

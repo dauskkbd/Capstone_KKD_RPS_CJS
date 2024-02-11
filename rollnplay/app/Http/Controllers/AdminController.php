@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\UsersCart;
 
 class AdminController extends Controller
 {
@@ -22,6 +23,31 @@ class AdminController extends Controller
             ->groupBy(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d')"))
             ->get();
 
+        $products = Product::query()
+            ->select('*')
+            ->get();
+
+
+        $user_cart = UsersCart::select('name', 'products.product_id', DB::raw('COUNT(products.product_id) AS product_count'))
+            ->join('products', 'products.product_id', '=', 'users_carts.product_id')
+            ->groupBy('name', 'products.product_id')
+            ->orderBy('product_count', 'DESC')
+            ->get();
+
+        $stock = [];
+        foreach ($products as $p) {
+            array_push($stock, $p->stock);
+        }
+
+        $item_name = [];
+        foreach ($products as $p) {
+            array_push($item_name, $p->name);
+        }
+
+        $prod_data = [
+            'labels' => $item_name,
+            'prod_data' => $stock
+        ];
 
         $profit = [];
         foreach ($orders as $o) {
@@ -38,7 +64,7 @@ class AdminController extends Controller
             'data' => $profit
         ];
 
-        return view('admin_dashboard', compact('data'));
+        return view('admin_dashboard', compact('data', 'prod_data', 'user_cart'));
     }
 
     public function admin_view_orders(string $id)
@@ -93,7 +119,7 @@ class AdminController extends Controller
                 ]
             );
 
-        return redirect('admin/panel/products')->with('success', 'Product has been edited!');
+        return redirect('admin/panel/products');
     }
 
     public function edit_product_form(string $id)
@@ -121,11 +147,13 @@ class AdminController extends Controller
     public function delete_product(string $id)
     {
 
-        Product::where('product_id', '=', $id)
-            ->delete();
+        $product = Product::find($id);
 
+        if ($product) {
+            $product->delete();
+        }
 
-        return redirect('/admin/panel/products')->with('success', 'Product has been deleted!');
+        return redirect('/admin/panel/product');
     }
 
 
@@ -139,12 +167,11 @@ class AdminController extends Controller
                     'last_name' => $r->input('last_name'),
                     'mobile' => $r->input('mobile'),
                     'email' => $r->input('email'),
-                    'role' => $r->input('role'),
                     'province' => $r->input('province'),
                 ]
             );
 
-        return redirect('admin/panel/users')->with('success', 'User info has been edited successfully!');
+        return redirect('admin/panel/users');
     }
 
     public function edit_user_form(string $id)
@@ -162,11 +189,13 @@ class AdminController extends Controller
     public function delete_user(string $id)
     {
 
-        User::where('user_id', '=', $id)
-            ->delete();
+        $user = User::find($id);
 
+        if ($user) {
+            $user->delete();
+        }
 
-        return redirect('/admin/panel/users')->with('success', 'An account has been deleted!');
+        return redirect('/admin/panel/users');
     }
 
 
@@ -189,6 +218,6 @@ class AdminController extends Controller
             );
 
 
-        return redirect('/admin/panel/orders/' . $id)->with('success', 'Order status has been changed to accepted!');
+        return redirect('/admin/panel/orders/' . $id) . $r->input("status");
     }
 }
