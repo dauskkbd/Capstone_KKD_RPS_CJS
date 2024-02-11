@@ -82,7 +82,8 @@ class ProductController extends Controller
             $productsQuery->orderBy('price');
         }
 
-        $products = $productsQuery->get();
+        $products = $productsQuery
+            ->paginate(8);
 
         return view('shop', compact('products', 'genreFilter'));
     }

@@ -2,21 +2,36 @@
 <html lang="en">
 <head>
     @include('layouts/head')
-    <title>RollNPlay-Delivery</title>
+    <title>My Order Summary</title>
     <style>
+         body{
+            font-family: "Poppins", sans-serif;
+            background-color: #D9D0C1;
+        }
         .user-delivery{
             margin-top: 10%;
+        }
+        table, th, tr, td{
+            background-color: #D9D0C1 !important;
+        }
+        th{
+            font-family: "Londrina Solid", sans-serif;
+            font-size: 1.3em;
+        }
+        #my_orders{
+            font-family: "Londrina Solid", sans-serif;
+            color: #1d1c1a;
+
         }
     </style>
 </head>
 <body>
     @include('layouts/navbar')
-    <div class="cointainer user-delivery">
+    <div class="container user-delivery">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Your Orders</h1>
+                <h1 id="my_orders" class="text-center">My Order Summary</h1>
                 @if($user_delivery)
-                <p>{{Session::get('first_name')}}, {{ Session::get('last_name') }}</p>
                 <table class="table">
                     <tr>
                         <th>Name</th>

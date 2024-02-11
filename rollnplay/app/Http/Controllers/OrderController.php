@@ -48,7 +48,7 @@ class OrderController extends Controller
                     ]
                 );
 
-            return redirect('/shop/view/')->with('success', 'Order has been placed!');
+            return redirect('/shop/view/delivery')->with('success', 'Order has been placed!');
         } else {
             abort(404);
         }

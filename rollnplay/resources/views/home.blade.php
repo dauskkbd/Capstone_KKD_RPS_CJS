@@ -59,55 +59,49 @@
         <div id="shop_by_category_section">
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="#">
-                        <img src="/images/aftermath.jpg" alt="blank image" class="img-fluid image-category">
+                    <div>
+                        <a href="/shop"><img src="/images/aftermath.jpg" alt="blank image" class="img-fluid image-category">
                         <p><strong>All Board Games</strong></p></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="">
+                    <div><a href="/shop?genre=Family+Games">
                         <img src="/images/ankh-gods-of-egypt.jpg" alt="blank image" class="img-fluid image-category">
-                        <p><strong>New Arrivals</strong></p></a>
+                        <p><strong>Family Games</strong></p></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="">
+                    <div><a href="/shop?genre=Adventure+Games">
                         <img src="/images/arkham-horror.jpg" alt="blank image" class="img-fluid image-category">
-                        <p><strong>Best Sellers</strong></p></a>
+                        <p><strong>Adventure games</strong></p></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="">
+                    <div><a href="/shop?genre=Expert+Games">
                         <img src="/images/azul-master-chocolatier.webp" alt="blank image" class="img-fluid image-category">
-                        <p><strong>Incoming Games</strong></p></a>
+                        <p><strong>Expert Games</strong></p></a>
                     </div>
                 </div>
                 <div class="mt-3">
                 </div>
             </div>
-            <div class="row">
+            <div class="row d-flex justify-content-around">
                 <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="">
+                    <div><a href="/shop?genre=Escape+Games">
                         <img src="/images/bloodborne.webp" alt="blank image" class="img-fluid image-category">
-                        <p><strong>Crowdfunded Games</strong></p></a>
+                        <p><strong>Escape Games</strong></p></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="">
+                    <div><a href="/shop?genre=Party+Games">
                         <img src="/images/century-spice-road-resize.jpg" alt="blank image" class="img-fluid image-category">
-                        <p><strong>Special Editions</strong></p></a>
+                        <p><strong>Party Games</strong></p></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="">
+                    <div><a href="/shop?genre=Living+Card+Games">
                         <img src="/images/chronicles-of-crime.jpg" alt="blank image" class="img-fluid image-category">
-                        <p><strong>Expansions</strong></p></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-6 category">
-                    <div><a href="">
-                        <img src="/images/coatl.webp" alt="blank image" class="img-fluid image-category">
-                        <p><strong>For the Kids</strong></p></a>
+                        <p><strong>Living Card Games</strong></p></a>
                     </div>
                 </div>
             </div>
@@ -141,15 +135,7 @@
                     <div class="suggested_game_description">
                         <h4 id="lg_description"><strong> One Night Ultimate Werewolf Daybreak by Ted Alspach</strong></h4>
                         <p class="suggested_game_price"><strong>₱1,400.00</strong></p>
-                        <form action="" class="number-input-form">
-                            <span class="btn decrease-btn"><span class="sm_text">-</span></span>
-                            <input type="text" class="order-number" min="0" max="9" value="0">
-                            <span class="btn increase-btn"><span class="sm_text">+</span></span>
-                            <span class="btn add-to-cart"><span class="sm_text">Add to cart</span></span>
-                        </form>
-                        <form action="" class="number-input-form">
-                            <span class="btn buy-now"><span class="sm_text">Buy Now</span></span>
-                        </form>
+                        <a href="{{ url('/shop/product/32') }}"><button type="button" class="btn" data-mdb-ripple-init>View Details</button></a>
                     </div>
                 </div>
             </div>
@@ -183,15 +169,7 @@
                     <div class="suggested_game_description">
                         <h4 id="sm_description"><strong>One Night Ultimate Werewolf Daybreak by Ted Alspach</strong></h4>
                         <p class="suggested_game_price"><strong>₱1,400.00</strong></p>
-                        <form action="" class="number-input-form">
-                            <button class="btn decrease-btn">-</button>
-                            <input type="text" class="order-number" min="0" max="9" value="0">
-                            <button class="btn increase-btn">+</button>
-                            <button class="btn add-to-cart">Add to cart</button>
-                        </form>
-                        <form action="" class="number-input-form">
-                            <span class="btn buy-now">Buy Now</span>
-                        </form>
+                        <a href="{{ url('/shop/product/32') }}"><button type="button" class="btn suggested" data-mdb-ripple-init>View Details</button></a>
                     </div>
                 </div>
             </div>

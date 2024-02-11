@@ -8,8 +8,25 @@
         font-family: "Poppins", sans-serif;
         background-color: #D9D0C1;
         }
-        .checkout{
-            margin-bottom: 5%;
+        #checkout_btn{
+            background-color: #00BF63;
+            font-family: "Londrina Solid", sans-serif;
+            font-size: 1.2em;
+            color: #1d1c1a;
+        }
+
+        .continue{
+            background-color: #2148D1;
+            font-family: "Londrina Solid", sans-serif;
+            font-size: 1.2em;
+            color: #1d1c1a;
+        }
+
+        .continue:hover{
+            background-color: #2148D1;
+            font-family: "Londrina Solid", sans-serif;
+            font-size: 1.2em;
+            color: #1d1c1a;
         }
 
         .checkout .table {
@@ -104,8 +121,8 @@
                         </table>
                         <form action="/shop/checkout" method="POST">
                         @csrf
-                        <button type="submit" class="btn checkout" data-mdb-ripple-init>Check out</button>
-                        <a href="/shop"><button type="button" class="btn btn-info" data-mdb-ripple-init>Continue Shopping</button></a>
+                        <button type="submit" class="btn" id="checkout_btn" data-mdb-ripple-init>Check out</button>
+                        <a href="/shop"><button type="button" class="btn continue" data-mdb-ripple-init>Continue Shopping</button></a>
                         @foreach($grand_total as $gt)
                         <span class="fs-3 ms-5 text-end grand"><strong>Grand Total: ₱{{$gt -> grand_total}}</strong></span>
                         @endforeach
@@ -164,8 +181,10 @@
                         </table>
                         <form action="/shop/checkout" method="POST">
                         @csrf
-                        <button type="submit" class="btn checkout" data-mdb-ripple-init>Check out</button>
-                        <a href="/shop"><button type="button" class="btn btn-info" data-mdb-ripple-init>Continue Shopping</button></a>
+                        <button type="submit" class="btn " id="checkout_btn" data-mdb-ripple-init>Check out</button>
+
+                        <a href="/shop"><button type="button" class="btn continue" data-mdb-ripple-init>Continue Shopping</button></a>
+
                         @foreach($grand_total as $gt)
                         <span class="fs-3 ms-5 text-end grand"><strong>Grand Total: ₱{{$gt -> grand_total}}</strong></span>
                         @endforeach
@@ -229,8 +248,8 @@
                         </table>
                         <form action="/shop/checkout" method="POST">
                         @csrf
-                        <button type="submit" class="btn checkout" data-mdb-ripple-init>Check out</button>
-                        <a href="/shop"><button type="button" class="btn btn-info" data-mdb-ripple-init>Continue Shopping</button></a>
+                        <button type="submit" class="btn " id="checkout_btn" data-mdb-ripple-init>Check out</button>
+                        <a href="/shop"><button type="button" class="btn continue" data-mdb-ripple-init>Continue Shopping</button></a>
                         @foreach($grand_total as $gt)
                         <span class="fs-3 ms-5 text-end grand"><strong>Grand Total: ₱{{$gt -> grand_total}}</strong></span>
                         @endforeach

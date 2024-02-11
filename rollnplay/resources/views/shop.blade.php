@@ -72,13 +72,13 @@
         }
         #view{
             background-color: #2148D1;
-            color: #1d1c1a;
+            color: #f8f9fa;
             padding-top: 15px;
             font-size: 1em;
             font-family: "Londrina Solid", sans-serif;
         }
         #shop{
-            color: #D9D0C1;
+            color: #1d1c1a;
             font-family: "Londrina Solid", sans-serif;
             font-size: 3em;
         }
@@ -131,7 +131,7 @@
             /* z-index: -1; */
           "
         >
-          <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+          <div class="mask">
             <div class="d-flex justify-content-center align-items-center h-100">
               
               <div class="text-white mt-5">
@@ -190,7 +190,7 @@
                                 <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
                                   <img src="/images/{{$p -> image}}" class="img-fluid"/>
                                   <a href="#!">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                    <div class="mask"></div>
                                   </a>
                                 </div>
                                 <div class="card-body">
@@ -206,6 +206,7 @@
                 </div>
             </div>
         </div>
+        {{$products -> links('pagination::bootstrap-5')}}
     </div>
 
     {{-- {{$products -> links('pagination::bootstrap-5')}} --}}

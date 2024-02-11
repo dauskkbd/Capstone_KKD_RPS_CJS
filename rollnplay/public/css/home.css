@@ -1,5 +1,5 @@
 body {
-    background-color: #D9D0C1;
+    background-color: #d9d0c1;
     padding-top: 100px;
     font-family: "Poppins", sans-serif;
     font-style: normal;
@@ -79,7 +79,7 @@ body {
 }
 
 #shop_by_category_section a:hover {
-    color: #8C564A;
+    color: #8c564a;
 }
 
 .category {
@@ -122,6 +122,19 @@ body {
 .suggested-game-container-lg #lg_description {
     margin-top: 20%;
     font-size: 180%;
+}
+
+.suggested-game-container-lg a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.suggested-game-container-lg .btn {
+    width: 100%;
+    background-color: #0924f1;
+    color: rgb(255, 255, 255);
+    font-size: 150%;
 }
 
 /* smaller screens css */
@@ -203,7 +216,6 @@ body {
 .add-to-cart:hover {
     background-color: rgba(0, 128, 0, 0.8);
     color: white;
-
 }
 
 .buy-now {
@@ -227,15 +239,14 @@ body {
 .visit-shop .btn {
     width: 20%;
     height: 40%;
-    background-color: #8C564A;
+    background-color: #8c564a;
 }
-#text_button{
+#text_button {
     color: #1d1c1a;
     font-family: "Londrina Solid", sans-serif;
     font-size: 20px;
 }
-.text_heading{
+.text_heading {
     font-family: "Londrina Solid", sans-serif;
     color: #1d1c1a;
 }
-

@@ -7,7 +7,9 @@
         
         body{
             font-family: "Poppins", sans-serif;
-            background-color: #D9D0C1
+            background-color: #D9D0C1;
+            text-align: justify;
+            
         }
        #div_con{   
             padding-top: 110px;
@@ -23,14 +25,65 @@
        }
        #description{
         color: #1d1c1a;
-        font-family: "Londrina Solid", sans-serif
+        font-family: "Londrina Solid", sans-serif;
        }
 
        .quantity_input::-webkit-inner-spin-button,
         .quantity_input::-webkit-outer-spin-button {
          -webkit-appearance: none;
         margin: 0;
-        }   
+        }
+        .quantity_input{
+            padding-left: 1.5%;
+        }
+        
+        .deduct_button{
+            background-color: #FF3333;
+            color: #1d1c1a;
+            font-family: "Londrina Solid", sans-serif;
+            font-size: 1.2em;
+
+        }
+        .add_button{
+            background-color: #FFD600;
+            color: #1d1c1a;
+            font-family: "Londrina Solid", sans-serif;
+            font-size: 1.2em;
+        }
+        .add_cart{
+            background-color: #00BF63;
+            color: #1d1c1a;
+            font-family: "Londrina Solid", sans-serif;
+            font-size: 1.2em;
+        }
+        .view{
+            background-color: #2148D1;
+            color: #1d1c1a;
+            font-family: "Londrina Solid", sans-serif;
+            font-size: 1.2em;
+        }
+        .deduct_button:hover{
+            background-color: #FF3333;
+            color: #D9D0C1;
+
+        }
+        .add_button:hover{
+            background-color: #FFD600;
+            color: #D9D0C1;
+        }
+        .add_cart:hover{
+            background-color: #00BF63;
+            color: #D9D0C1;
+        }
+        .view:hover{
+            background-color: #2148D1;
+            color: #D9D0C1;
+        }
+        .price{
+            color: #1d1c1a;
+            font-family: "Londrina Solid", sans-serif;
+            font-size: 1.2em;
+        }
 
     </style>
     <script>
@@ -97,24 +150,24 @@
         <h3 class="text-center" id="head_genre">{{$p -> genre}}</h3>
         <div class="row">
             <div class="col-lg-6 text-center">
-                <img src="/images/{{$p -> image}}" alt="{{$p -> name}}">
+                <img src="/images/{{$p -> image}}" alt="{{$p -> name}}" class="img-fluid">
             </div>
             <div class="col-lg-6">
                 <h4 class="text-center mt-3" id="description">Description</h4>
                 <p>{{$p -> description}}</p>
             </div>
-            <p class="text-end">PRICE ₱{{$p -> price}}</p>
+            <p class="text-end price">PRICE ₱{{$p -> price}}</p>
 
         </div>
 
         @endforeach
-        <a class="btn btn-danger deduct_button" id="deduct_{{$p -> product_id}}">-</a>
-        <input type="number" class="quantity_input" style="width: 50px" min="0" max="99" value="1" id="order_{{$p -> product_id}}" name="order_{{$p -> product_id}}">
-        <a class="btn btn-primary add_button" id="add_{{$p -> product_id}}">+</a>
+        <a class="btn deduct_button" id="deduct_{{$p -> product_id}}">-</a>
+        <input type="number" class="quantity_input" style="width: 50px; height: 45px;" min="0" max="99" value="1" id="order_{{$p -> product_id}}" name="order_{{$p -> product_id}}">
+        <a class="btn add_button" id="add_{{$p -> product_id}}">+</a>
         <span id="add_to_cart_message"></span>
         <br><br>
-        <button type="submit" class="btn btn-success" data-mdb-ripple-init id="add_to_cart_button">Add to cart</button>
-        <a href="/shop/view/"><button type="button" class="btn btn-info" data-mdb-ripple-init>View Cart</button></a>
+        <button type="submit" class="btn add_cart" data-mdb-ripple-init id="add_to_cart_button">Add to cart</button>
+        <a href="/shop/view/"><button type="button" class="btn view" data-mdb-ripple-init>View Cart</button></a>
         </form>
     </div>
     @include('layouts/script')
