@@ -115,7 +115,7 @@
         <div class="row">
           <div class="col-lg-4 mb-3">
             <div class="card">
-              <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
+              <img src="/images/some-red-guy.jpg" class="card-img-top" alt="Kevin The Dev"/>
               <div class="card-body">
                 <h5 class="card-title">Kevin Kenneth Daus <br/>CEO</h5>
                 <p class="card-text">Brings a wealth of experience and a passion for gaming. His strategic vision and keen understanding of market dynamics have propelled the company to new heights.</p>
@@ -125,7 +125,7 @@
 
           <div class="col-lg-4 mb-3">
             <div class="card">
-              <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
+              <img src="/images/lord-of-cinder.jpg" class="card-img-top" alt="Rendell The Dev"/>
               <div class="card-body">
                 <h5 class="card-title">Rendell Soberano <br/> COO</h5>
                 <p class="card-text">With a proven track record in optimizing production processes, and operational efficiency. Ensuring seamless execution across all facets of the company's operations.</p>
@@ -136,7 +136,7 @@
 
           <div class="col-lg-4 mb-3">
             <div class="card">
-              <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
+              <img src="/images/cj-the-great.jpg" class="card-img-top" alt="CJ The Dev"/>
               <div class="card-body">
                 <h5 class="card-title">Christian Jay Salvino <br>Marketing Director</h5>
                 <p class="card-text">Brings a dynamic blend of creativity and comprehensive strategic insight to the forefront of promotional efforts.  Fostering engagement within the gaming community</p>
