@@ -15,11 +15,11 @@ ENV APP_DEBUG false
 ENV APP_KEY base64:sD1A4zmRrfYSqk7YqhFwF0m3tqtWtSJND0QR1DYEvmc=
 ENV LOG_CHANNEL stderr
 ENV DB_CONNECTION pgsql
-ENV DB_HOST dpg-cn4cahen7f5s7392cvvg-a.singapore-postgres.render.com
+ENV DB_HOST dpg-cn4g0uocmk4c73emeudg-a.singapore-postgres.render.com
 ENV DB_PORT 5432
-ENV DB_DATABASE boardgames_zh19
+ENV DB_DATABASE boardgames_adfo
 ENV DB_USERNAME root
-ENV DB_PASSWORD k6lnngYkE4vVH3uRJDEo4930zCdBJNr6
+ENV DB_PASSWORD kesC2VzfIzb06EQ8hx3DAGRkKO4Nf35v
 ENV MYSQL_ATTR_SSL_CA cacert-2023-12-12.pem
 
 # Allow composer to run as root
