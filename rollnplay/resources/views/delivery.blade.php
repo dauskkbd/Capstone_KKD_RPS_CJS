@@ -46,6 +46,7 @@
 </head>
 <body>
     @include('layouts/navbar_delivery')
+    @include('layouts/messages')
 
         
         

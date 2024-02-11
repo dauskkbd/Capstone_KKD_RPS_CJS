@@ -4,6 +4,7 @@
    
     @include('layouts/head')
     
+    
     <link rel="stylesheet" href="css/home.css">
     <script src="js/home.js"></script>
     <title>RollNPlay-Home</title>
@@ -11,6 +12,7 @@
 <body>
     
 @include('layouts/navbar')
+@include('layouts/messages')
     {{-- hero banner section --}}
 <div class="seperator">
     <div class="container" id="hero_banner_section">

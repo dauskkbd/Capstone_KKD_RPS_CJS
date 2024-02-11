@@ -18,7 +18,7 @@ class DeliveryController extends Controller
             $order->delete();
         }
 
-        return redirect('delivery/dashboard');
+        return redirect('delivery/dashboard')->with('success', 'Order has been declined!');
     }
 
 
@@ -78,6 +78,6 @@ class DeliveryController extends Controller
             );
 
 
-        return redirect('/delivery/' . $id) . $r->input("status");
+        return redirect('/delivery/' . $id)->with('success', 'Updated order status successfully!');
     }
 }

@@ -60,6 +60,7 @@ table, th, tr, td{
 
 </head>
 @include('layouts/navbar_delivery')
+@include('layouts/messages')
 <body>
 <div class="container" id="div_con">
     <h1 id="head" class="text-center">Deliveries</h1>
@@ -100,14 +101,14 @@ table, th, tr, td{
             <td id="actions" data-cell="actions">
                 <a id="view" href="/delivery/{{$o -> order_id}}" class="btn" data-mdb-ripple-init>View</a>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn" id="decline" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#exampleModal">
+                <button type="button" class="btn" id="decline" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#order_{{$o -> order_id}}">
                     Decline
                   </button>
             </td>
             
         </tr>
         <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="order_{{$o -> order_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">

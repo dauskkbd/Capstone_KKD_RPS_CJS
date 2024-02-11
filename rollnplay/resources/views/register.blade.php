@@ -27,19 +27,24 @@
 
     <script>
         $(document).ready(function (){
-            $password = $("#password").value();
-            $con_pw = $("con_pw").value();
+            $('#submit').click(function(){
+                $password = $("#password").val();
+            $con_pw = $("con_pw").val();
 
             if(password != con_pw){
                 $("#pass").text("Password did not match, Try again.")
-            }
-
+            } 
+           
+            });     
         });
     </script>
 </head>
 
 <body>
+
     @include("layouts/navbar")
+
+    @include('layouts/messages')
 
     <section class=" gradient-custom">
         <div class="container" id="div_con">
@@ -47,9 +52,8 @@
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card bg-dark text-white" style="border-radius: 1rem;">
                         <div class="card-body p-5 text-center">
-                            <form action="/register" method="POST">
+                            <form action="/register/new" method="POST">
                                 @csrf
-
                                 <div class="mb-md-4 mt-md-4 ">
                                     <h2 class="fw-bold mb-2 text-uppercase" id="register">Register</h2>
                                     <p class="text-white-50 mb-5">Please fill up the form to register!</p>
@@ -81,17 +85,17 @@
                                     </div>
                                     {{--  --}}
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="role" id="inlineRadio1" value="1" required/>
+                                        <input class="form-check-input" type="radio" name="role" id="inlineRadio1" value="user" required/>
                                         <label class="form-check-label" for="inlineRadio1">User</label>
                                       </div>
                                       
                                       <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="role" id="inlineRadio2" value="2" disabled/>
+                                        <input class="form-check-input" type="radio" name="role" id="inlineRadio2" value="delivery" disabled/>
                                         <label class="form-check-label" for="inlineRadio2">Delivery</label>
                                       </div>
                                       
                                       <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="role" id="inlineRadio3" value="3" disabled />
+                                        <input class="form-check-input" type="radio" name="role" id="inlineRadio3" value="admin" disabled />
                                         <label class="form-check-label" for="inlineRadio3">Admin</label>
                                       </div>
                                     {{--  --}}
@@ -105,7 +109,7 @@
                                         <label class="form-label" for="con_pw">Confirm Password</label>
                                     </div>
 
-                                    <input class="btn btn-lg px-5" type="submit" value="submit" id="submit"/>
+                                    <input type="submit" class="btn btn-lg px-5" value="submit" id="submit"/>
                                     <p id="pass"></p>
                                 </div>
                             </form>

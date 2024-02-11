@@ -70,7 +70,7 @@ font-size: 20px;
                     <select class="form-select" aria-label="Default select example" name="status">
                         <option selected disabled>Choose Status</option>
                         <option value="waiting">Waiting</option>
-                        <option value="Accepted">Accepted</option>
+                        <option value="accepted">Accepted</option>
                       </select><br/>
                       <input type="submit" class="btn" value="Change Status" id="submit" data-mdb-ripple-init/>
                 </form>

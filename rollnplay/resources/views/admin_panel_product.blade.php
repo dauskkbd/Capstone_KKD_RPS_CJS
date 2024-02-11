@@ -57,6 +57,7 @@
 </head>
 <body>
     @include('layouts/navbar')
+    @include('layouts/messages')
     <div class="container" id="div_con">
     <h1 class="text-center" id="products">Products</h1>
 
@@ -87,19 +88,13 @@
                 <a href="/admin/panel/products/edit/{{$i -> product_id}}" class="btn" id="edit">Edit Entry</a>
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn" id="delete" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#exampleModal">
+                <button type="button" class="btn" id="delete" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#product_{{$i -> product_id}}">
                     Delete Entry
                 </button>
                 </td>   
             </tr>
-            @endforeach
-
-        </table>
-    </div>
-
-
-    <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <!-- Modal -->
+  <div class="modal fade" id="product_{{$i -> product_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -120,6 +115,13 @@
       </div>
     </div>
   </div>
+            @endforeach
+
+        </table>
+    </div>
+
+
+  
 
     @include('layouts/footer')
     @include('layouts/script')

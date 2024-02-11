@@ -20,8 +20,9 @@ Route::post("/login", [UserController::class, "login"]);
 
 Route::get("/logout", [UserController::class, "logout"]);
 
+Route::post("/register/new", [UserController::class, "register"]);
 Route::get("/register", [UserController::class, "show_register"]);
-Route::post("/register", [UserController::class, "register"]);
+
 
 
 

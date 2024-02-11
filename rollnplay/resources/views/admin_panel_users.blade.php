@@ -45,7 +45,7 @@
 </head>
 <body>
     @include('layouts/navbar')
-
+    @include('layouts/messages')
     <div class="container" id="div_con">
     <h1 class="text-center" id="users">Users</h1>
 
@@ -70,26 +70,20 @@
             <td>{{$i -> mobile}}</td>
             <td>{{$i -> email}}</td>
             <td>{{$i -> role}}</td>
+            
             <td id="actions">
                 <a href="/admin/panel/users/edit/{{$i -> user_id}}" class="btn btn-warning" id="edit">Edit Entry</a>
 
-                <button type="button" class="btn" id="delete" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#exampleModal">
+                <button type="button" class="btn" id="delete" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#user_{{$i -> user_id}}">
                     Delete Entry
                 </button>
             </td>
 
               
         </tr>
-        @endforeach
 
-    </table>
-</div>
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- Modal -->
+<div class="modal fade" id="user_{{$i -> user_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -111,6 +105,15 @@
       </div>
     </div>
   </div>
+        @endforeach
+
+    </table>
+</div>
+
+
+
+
+
 
     @include('layouts/footer')
     @include('layouts/script')

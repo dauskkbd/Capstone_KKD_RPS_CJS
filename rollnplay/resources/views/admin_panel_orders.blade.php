@@ -37,6 +37,7 @@
 </head>
 <body>
     @include('layouts/navbar')
+    @include('layouts/messages')
 <div class="container" id="div_con">
     <h1 class="text-center" id="orders">Orders</h1>
 

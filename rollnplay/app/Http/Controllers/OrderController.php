@@ -48,7 +48,7 @@ class OrderController extends Controller
                     ]
                 );
 
-            return redirect('/shop/view/');
+            return redirect('/shop/view/')->with('success', 'Order has been placed!');
         } else {
             abort(404);
         }
@@ -59,7 +59,7 @@ class OrderController extends Controller
         Cart::where('product_id', '=', $id)
             ->delete();
 
-        return redirect('/shop/view');
+        return redirect('/shop/view')->with('success', 'Item deleted');
     }
 
     public function edit_item(Request $r, string $id)

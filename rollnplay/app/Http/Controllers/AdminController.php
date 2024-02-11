@@ -93,7 +93,7 @@ class AdminController extends Controller
                 ]
             );
 
-        return redirect('admin/panel/products');
+        return redirect('admin/panel/products')->with('success', 'Product has been edited!');
     }
 
     public function edit_product_form(string $id)
@@ -121,13 +121,11 @@ class AdminController extends Controller
     public function delete_product(string $id)
     {
 
-        $product = Product::find($id);
+        Product::where('product_id', '=', $id)
+            ->delete();
 
-        if ($product) {
-            $product->delete();
-        }
 
-        return redirect('/admin/panel/product');
+        return redirect('/admin/panel/products')->with('success', 'Product has been deleted!');
     }
 
 
@@ -141,11 +139,12 @@ class AdminController extends Controller
                     'last_name' => $r->input('last_name'),
                     'mobile' => $r->input('mobile'),
                     'email' => $r->input('email'),
+                    'role' => $r->input('role'),
                     'province' => $r->input('province'),
                 ]
             );
 
-        return redirect('admin/panel/users');
+        return redirect('admin/panel/users')->with('success', 'User info has been edited successfully!');
     }
 
     public function edit_user_form(string $id)
@@ -163,13 +162,11 @@ class AdminController extends Controller
     public function delete_user(string $id)
     {
 
-        $user = User::find($id);
+        User::where('user_id', '=', $id)
+            ->delete();
 
-        if ($user) {
-            $user->delete();
-        }
 
-        return redirect('/admin/panel/users');
+        return redirect('/admin/panel/users')->with('success', 'An account has been deleted!');
     }
 
 
@@ -192,6 +189,6 @@ class AdminController extends Controller
             );
 
 
-        return redirect('/admin/panel/orders/' . $id) . $r->input("status");
+        return redirect('/admin/panel/orders/' . $id)->with('success', 'Order status has been changed to accepted!');
     }
 }

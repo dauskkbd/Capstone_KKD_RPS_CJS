@@ -24,23 +24,25 @@ class UserController extends Controller
             'email' => 'required|unique:users,email',
             'pw' => 'required|min:4',
             'con_pw' => 'required|same:pw',
-            'user_id' => 'required|unique:users,user_id'
+            'role' => 'sometimes|in:user,delivery,admin'
         ], [], [
             'pw' => 'password',
             'con_pw' => 'password confirmation',
-            'user_id' => 'user ID'
+            'role' => 'role'
         ]);
 
         $user = new User;
         $user->first_name = $r->input('first_name');
         $user->last_name = $r->input('last_name');
         $user->email = $r->input('email');
+        $user->mobile = $r->input('mobile');
         $user->password = Hash::make($r->input('pw'));
         $user->role = $r->input('role');
-        $user->user_id = $r->input('user_id');
+        $user->province = $r->input('province');
+
         $user->save();
 
-        return redirect("/register");
+        return redirect("/register")->with('success', "Registered Successfully!");
     }
 
     public function show_register()
@@ -54,7 +56,7 @@ class UserController extends Controller
             Session::flush();
         }
 
-        return redirect("login");
+        return redirect("login")->with('success', "Logged out successfully");
     }
 
     public function login(Request $r)
@@ -72,17 +74,15 @@ class UserController extends Controller
                 Session::put("role", $user->role);
 
                 if (Session::get("role") == "admin") {
-                    return redirect("/dashboard");
+                    return redirect("/dashboard")->with('success', 'Logged in as Admin!');
                 } else if (Session::get("role") == "user") {
-                    return redirect("/");
+                    return redirect("/")->with('success', 'Logged in as User!');
                 } else if (Session::get("role") == "delivery") {
-                    return redirect("/delivery/dashboard");
+                    return redirect("/delivery/dashboard")->with('success', 'Logged in as Delivery!');
                 }
-            } else {
-                return redirect("/login");
             }
         } else {
-            return redirect("/login");
+            return redirect("/login")->with('fail', 'Please enter correct credentials!');
         }
     }
 

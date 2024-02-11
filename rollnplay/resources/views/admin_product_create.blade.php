@@ -32,6 +32,7 @@
 </style>
 <body>
     @include("layouts/navbar")
+    @include('layouts/messages')
     <h1 id="product" class="text-center">Create New Product</h1>
   <div class="container mt-5 mb-5" id="section">
         <h3 class="text-center">Fill up form to create new product.</h3>

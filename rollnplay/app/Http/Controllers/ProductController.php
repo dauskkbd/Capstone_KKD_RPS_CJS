@@ -43,7 +43,7 @@ class ProductController extends Controller
         }
         $p->save();
 
-        return redirect('admin/products');
+        return redirect('admin/products')->with('success', 'New product has been added.');
     }
 
     public function product_create()

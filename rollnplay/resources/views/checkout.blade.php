@@ -12,6 +12,7 @@
 </head>
 <body>
     @include('layouts/navbar')
+    @include('layouts/messages')
     <div class="container checkout">
             <table class="table">  
                 <tr>
