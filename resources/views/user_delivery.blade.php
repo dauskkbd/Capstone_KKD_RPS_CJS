@@ -3,27 +3,7 @@
 <head>
     @include('layouts/head')
     <title>My Order Summary</title>
-    <style>
-         body{
-            font-family: "Poppins", sans-serif;
-            background-color: #D9D0C1;
-        }
-        .user-delivery{
-            margin-top: 10%;
-        }
-        table, th, tr, td{
-            background-color: #D9D0C1 !important;
-        }
-        th{
-            font-family: "Londrina Solid", sans-serif;
-            font-size: 1.3em;
-        }
-        #my_orders{
-            font-family: "Londrina Solid", sans-serif;
-            color: #1d1c1a;
-
-        }
-    </style>
+    <link rel="stylesheet" href="/css/user_delivery.css">
 </head>
 <body>
     @include('layouts/navbar')

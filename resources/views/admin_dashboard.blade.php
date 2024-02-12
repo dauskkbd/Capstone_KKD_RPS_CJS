@@ -3,17 +3,8 @@
 <head>
     @include("layouts/head")
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Document</title>
-    <style>
-        .admin-dashboard-container{
-            margin-top: 10%;
-            margin-bottom: 5%;
-        }
-
-        .admin-card-container{
-            margin-bottom: 10%;
-        }
-    </style>
+    <title>RollNPlay-Dashboard</title>
+    <link rel="stylesheet" href="/css/admin_dashboard.css">
 </head>
 <body>
     @include("layouts/navbar_admin")
@@ -49,15 +40,6 @@
                         </tr>
                         @endforeach()
                       </table>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <button type="button" class="btn btn-primary" data-mdb-ripple-init>Button</button>
                     </div>
                   </div>
             </div>

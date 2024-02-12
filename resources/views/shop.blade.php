@@ -2,118 +2,12 @@
 <html lang="en">
 <head>
     @include('layouts/head')
-    <style>
-        body{
-            font-family: "Poppins", sans-serif;
-            background-color: #D9D0C1
-        }
-
-        .shop-banner-container{
-            padding-top: 50px;
-        }
-
-        .sorting-section-container{
-            display: block;
-            margin-top: 30px;
-            width: 94%;
-        }
-
-
-        .filters-cards-container{
-            width: 95%;
-            margin-top: 2%;
-
-        }
-
-        .filters{
-            background-color: white;
-            border-radius: 10px;
-            padding: 1%
-        }
-
-        .cards{
-            margin-left: 1%;
-            /* max-width: 100em; */
-        }
-
-        .custom-dropdown .custom-select {
-        border: none;
-        border-radius: 5px;
-        padding: 8px 15px;
-        background-color: #f8f9fa;
-        color: #000;
-        font-size: 16px;
-        font-weight: bold;
-        }
-
-        .custom-dropdown .custom-select:focus {
-        outline: none;
-        box-shadow: none;
-        }
-
-        .custom-dropdown .custom-select option {
-        background-color: #fff; 
-        color: #000;
-        font-size: 16px;
-        font-weight: bold;
-        }
-        #price{
-            margin-left: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #00BF63;
-            padding: 10px;
-            border-radius: 10px;
-            color: #1d1c1a;
-        }
-        .card-footer{
-            display: inline-flex;
-        }
-        #view{
-            background-color: #2148D1;
-            color: #f8f9fa;
-            padding-top: 15px;
-            font-size: 1em;
-            font-family: "Londrina Solid", sans-serif;
-        }
-        #shop{
-            color: #1d1c1a;
-            font-family: "Londrina Solid", sans-serif;
-            font-size: 3em;
-        }
-        
-        .cart{
-            background-color: #00BF63;
-            color: #1d1c1a;
-            font-family: "Londrina Solid", sans-serif;
-            font-size: 0.9em;
-            
-        }
-        .cart:hover{
-            background-color: #00BF63;
-            color: #D9D0C1
-        }
-        
-    </style>
+    <link rel="stylesheet" href="/css/shop.css">
     <script type="module">
         import { Ripple, initMDB } from "mdb-ui-kit";
         initMDB({ Ripple }); 
     </script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        let maxLength = 100;
-        let descriptionElements = document.querySelectorAll(".card-text.description");
-        
-        descriptionElements.forEach(function(element) {
-            let description = element.textContent.trim();
-            if (description.length > maxLength) {
-                let truncatedText = description.substring(0, maxLength) + "...";
-                element.textContent = truncatedText;
-            }
-        });
-      });
+    <script src="/js/shop.js">
     </script>
     <title>Shop</title>
 </head>
