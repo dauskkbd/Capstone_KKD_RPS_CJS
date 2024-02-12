@@ -21,29 +21,6 @@ class ProductsTableSeeder extends Seeder
         \DB::table('products')->insert(array (
             0 => 
             array (
-                'product_id' => 20,
-                'name' => 'Century: Spice Road',
-                'w_price' => 1800,
-                'price' => 2500,
-                'description' => 'Grow and trade spices and use them to gain estate.
-
-Century: Spice Road is the first in a series of games that explores the history of each century with spice-trading as the theme for the first installment. In Century: Spice Road, players are caravan leaders who travel the famed silk road to deliver spices to the far reaches of the continent for fame and glory. Each turn, players perform one of four actions:
-Establish a trade route (by taking a market card)
-Make a trade or harvest spices (by playing a card from hand)
-Fulfill a demand (by meeting a victory point card\'s requirements and claiming it)
-Rest (by taking back into your hand all of the cards you\'ve played)
-The last round is triggered once a player has claimed their fifth victory point card, then whoever has the most victory points wins.
-
-2–5 Players
-30–45 Min
-Age: 8+',
-                'genre' => 'Family Games',
-                'stock' => 100,
-                'image' => 'century-spice-road.jpg',
-                'offers' => NULL,
-            ),
-            1 => 
-            array (
                 'product_id' => 1,
                 'name' => 'Chronicles of Crime',
                 'w_price' => 1000,
@@ -67,7 +44,7 @@ Each session last around 1h to 1h30 minutes and many scenarios are connected to 
                 'image' => 'chronicles-of-crime.jpg',
                 'offers' => 'latest',
             ),
-            2 => 
+            1 => 
             array (
                 'product_id' => 2,
                 'name' => 'Sleeping Gods',
@@ -89,7 +66,7 @@ Welcome to a vast world. Your journey starts now.',
                 'image' => 'sleeping-gods.webp',
                 'offers' => NULL,
             ),
-            3 => 
+            2 => 
             array (
                 'product_id' => 3,
                 'name' => 'The Lord of the Rings: Journeys in Middle-Earth',
@@ -115,7 +92,7 @@ In addition to their special ability and the items they claim at the beginning o
                 'image' => 'lord_of_the_rings.jpg',
                 'offers' => 'popular',
             ),
-            4 => 
+            3 => 
             array (
                 'product_id' => 5,
                 'name' => 'Destinies',
@@ -131,7 +108,7 @@ Destinies use an app and Scan&Play technology to offer players a unique story-dr
                 'image' => 'destinies.jpg',
                 'offers' => NULL,
             ),
-            5 => 
+            4 => 
             array (
                 'product_id' => 6,
                 'name' => 'Aftermath',
@@ -151,7 +128,7 @@ Return to your colony with resources and information that will help your friends
                 'image' => 'aftermath.jpg',
                 'offers' => 'latest',
             ),
-            6 => 
+            5 => 
             array (
                 'product_id' => 7,
             'name' => 'Roll Player Adventures (Base Game)',
@@ -178,7 +155,7 @@ Roll Player Adventures does not require the Roll Player base game or any of its 
                 'image' => 'roll-player-adventures.webp',
                 'offers' => NULL,
             ),
-            7 => 
+            6 => 
             array (
                 'product_id' => 8,
             'name' => 'Tainted Grail: The Fall of Avalon (Core Box)',
@@ -202,7 +179,7 @@ Age: 14+',
                 'image' => 'tainted-grail.webp',
                 'offers' => 'latest',
             ),
-            8 => 
+            7 => 
             array (
                 'product_id' => 9,
                 'name' => 'Through the Ages: A New Story of Civilization',
@@ -225,7 +202,7 @@ Age: 14+',
                 'image' => 'through-the-ages.webp',
                 'offers' => NULL,
             ),
-            9 => 
+            8 => 
             array (
                 'product_id' => 10,
                 'name' => 'Ankh: Gods of Egypt',
@@ -245,7 +222,7 @@ Age: 14+',
                 'image' => 'ankh-gods-of-egypt.jpg',
                 'offers' => NULL,
             ),
-            10 => 
+            9 => 
             array (
                 'product_id' => 11,
                 'name' => 'Unmatched: Hell\'s Kitchen',
@@ -257,7 +234,7 @@ Age: 14+',
                 'image' => 'unmatched-hells-kitchen.webp',
                 'offers' => 'popular',
             ),
-            11 => 
+            10 => 
             array (
                 'product_id' => 12,
                 'name' => 'Hegemony: Lead Your Class to Victory',
@@ -283,7 +260,7 @@ Age: 14+',
                 'image' => 'hegemony.webp',
                 'offers' => NULL,
             ),
-            12 => 
+            11 => 
             array (
                 'product_id' => 13,
                 'name' => 'Bloodborne: The Board Game',
@@ -298,7 +275,7 @@ In Bloodborne: The Board Game, a campaign-based action-adventure game, players w
                 'image' => 'bloodborne.webp',
                 'offers' => 'popular',
             ),
-            13 => 
+            12 => 
             array (
                 'product_id' => 14,
                 'name' => 'The Witcher : Old World',
@@ -329,7 +306,7 @@ Age: 14+
                 'image' => 'the-witcher.jpg',
                 'offers' => 'trending',
             ),
-            14 => 
+            13 => 
             array (
                 'product_id' => 15,
                 'name' => 'Tiletum',
@@ -351,7 +328,7 @@ Age: 14+',
                 'image' => 'tiletum.webp',
                 'offers' => NULL,
             ),
-            15 => 
+            14 => 
             array (
                 'product_id' => 16,
                 'name' => 'Organ ATTACK!',
@@ -376,7 +353,7 @@ Age: 8+',
                 'image' => 'organ-attack.webp',
                 'offers' => 'trending',
             ),
-            16 => 
+            15 => 
             array (
                 'product_id' => 17,
                 'name' => 'Pandemic',
@@ -402,7 +379,7 @@ Age: 8+',
                 'image' => 'pandemic.jpg',
                 'offers' => NULL,
             ),
-            17 => 
+            16 => 
             array (
                 'product_id' => 18,
                 'name' => 'Munchkin Deluxe',
@@ -434,7 +411,7 @@ Munchkin Deluxe the Board Game gives you and your friends the freedom to explore
                 'image' => 'munchkin.jpg',
                 'offers' => NULL,
             ),
-            18 => 
+            17 => 
             array (
                 'product_id' => 19,
                 'name' => 'Ticket to Ride',
@@ -445,6 +422,29 @@ Munchkin Deluxe the Board Game gives you and your friends the freedom to explore
                 'stock' => 100,
                 'image' => 'ticket-to-ride.jpg',
                 'offers' => 'trending',
+            ),
+            18 => 
+            array (
+                'product_id' => 20,
+                'name' => 'Century: Spice Road',
+                'w_price' => 1800,
+                'price' => 2500,
+                'description' => 'Grow and trade spices and use them to gain estate.
+
+Century: Spice Road is the first in a series of games that explores the history of each century with spice-trading as the theme for the first installment. In Century: Spice Road, players are caravan leaders who travel the famed silk road to deliver spices to the far reaches of the continent for fame and glory. Each turn, players perform one of four actions:
+Establish a trade route (by taking a market card)
+Make a trade or harvest spices (by playing a card from hand)
+Fulfill a demand (by meeting a victory point card\'s requirements and claiming it)
+Rest (by taking back into your hand all of the cards you\'ve played)
+The last round is triggered once a player has claimed their fifth victory point card, then whoever has the most victory points wins.
+
+2–5 Players
+30–45 Min
+Age: 8+',
+                'genre' => 'Family Games',
+                'stock' => 100,
+                'image' => 'century-spice-road.jpg',
+                'offers' => NULL,
             ),
             19 => 
             array (
