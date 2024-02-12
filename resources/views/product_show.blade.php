@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     @include('layouts/head')
-    <title>RollNPlay-</title>
+    <title>RollNPlay-Product</title>
     <style>
         
         body{
