@@ -1,0 +1,76 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #d9d0c1;
+    text-align: justify;
+}
+#div_con {
+    padding-top: 110px;
+    padding-bottom: 30px;
+}
+#head_name {
+    color: #1d1c1a;
+    font-family: "Londrina Solid", sans-serif;
+}
+#head_genre {
+    color: #1d1c1a;
+    font-family: "Londrina Solid", sans-serif;
+}
+#description {
+    color: #1d1c1a;
+    font-family: "Londrina Solid", sans-serif;
+}
+
+.quantity_input::-webkit-inner-spin-button,
+.quantity_input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.quantity_input {
+    padding-left: 1.5%;
+}
+
+.deduct_button {
+    background-color: #ff3333;
+    color: #1d1c1a;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 1.2em;
+}
+.add_button {
+    background-color: #ffd600;
+    color: #1d1c1a;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 1.2em;
+}
+.add_cart {
+    background-color: #00bf63;
+    color: #1d1c1a;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 1.2em;
+}
+.view {
+    background-color: #2148d1;
+    color: #1d1c1a;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 1.2em;
+}
+.deduct_button:hover {
+    background-color: #ff3333;
+    color: #d9d0c1;
+}
+.add_button:hover {
+    background-color: #ffd600;
+    color: #d9d0c1;
+}
+.add_cart:hover {
+    background-color: #00bf63;
+    color: #d9d0c1;
+}
+.view:hover {
+    background-color: #2148d1;
+    color: #d9d0c1;
+}
+.price {
+    color: #1d1c1a;
+    font-family: "Londrina Solid", sans-serif;
+    font-size: 1.2em;
+}

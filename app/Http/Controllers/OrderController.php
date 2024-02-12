@@ -16,11 +16,14 @@ class OrderController extends Controller
 {
     public function view_delivery()
     {
+        $user_id = Session::get('user_id');
+
         $user_delivery = Order::query()
             ->select('*')
             ->join('users_carts as uc', 'uc.order_id', '=', 'orders.order_id')
             ->join('users as u', 'uc.user_id', '=', 'u.user_id')
             ->join('products as p', 'p.product_id', '=', 'uc.product_id')
+            ->where('u.user_id', '=', $user_id)
             ->orderBy('orders.order_id', 'DESC')
             ->get();
 
