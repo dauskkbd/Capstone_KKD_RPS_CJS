@@ -40,7 +40,7 @@ Each session last around 1h to 1h30 minutes and many scenarios are connected to 
 
 —description from the publisher',
                 'genre' => 'Adventure Games',
-                'stock' => 100,
+                'stock' => 67,
                 'image' => 'chronicles-of-crime.jpg',
                 'offers' => 'latest',
             ),
@@ -62,7 +62,7 @@ Sleeping Gods is a storybook game. Each new location holds wild adventure, hidde
 
 Welcome to a vast world. Your journey starts now.',
                 'genre' => 'Adventure Games',
-                'stock' => 100,
+                'stock' => 75,
                 'image' => 'sleeping-gods.webp',
                 'offers' => NULL,
             ),
@@ -88,7 +88,7 @@ A hero like Aragorn, for example, is a born leader, helping the entire party pre
 
 In addition to their special ability and the items they claim at the beginning of a campaign, every hero sets off on their journey with a unique deck of skill cards that they use to ward off dangers and make progress in their adventures. These cards represent a character’s accumulated knowledge from their days exploring Middle-earth, including tactics, innate abilities, and even songs they can draw on in the heat of battle. Whether you’re playing as Legolas or Beravor, however, you must carefully choose how to apply your skills.',
                 'genre' => 'Adventure Games',
-                'stock' => 100,
+                'stock' => 47,
                 'image' => 'lord_of_the_rings.jpg',
                 'offers' => 'popular',
             ),
@@ -104,7 +104,7 @@ Destinies use an app and Scan&Play technology to offer players a unique story-dr
 
 “Player agency” is truly rewarded in Destinies as players are able to freely explore, interact with characters, make impactful decisions and truly feel the consequences of their actions in the world. Scanning item cards into the app will present players with contextual outcomes to their actions. For example, choosing to throw a flaming torch into a mystical grove or applying medicinal herbs to a wounded druid could have very impactful opposing effects on the entire game world.',
                 'genre' => 'Adventure Games',
-                'stock' => 100,
+                'stock' => 89,
                 'image' => 'destinies.jpg',
                 'offers' => NULL,
             ),
@@ -124,7 +124,7 @@ Return to your colony with resources and information that will help your friends
 
 —description from the publisher',
                 'genre' => 'Adventure Games',
-                'stock' => 100,
+                'stock' => 83,
                 'image' => 'aftermath.jpg',
                 'offers' => 'latest',
             ),
@@ -151,7 +151,7 @@ Roll Player Adventures is a cooperative storybook board game for 1-4 players set
 Choose from one of many characters, or import a favorite Roll Player character and take them on a heroic journey. If you do import a character you\'ve built in Roll Player, any number of expansions and any number of promo cards/boards that were used, may continue to be used in Roll Player Adventures!
 Roll Player Adventures does not require the Roll Player base game or any of its expansions to play',
                 'genre' => 'Adventure Games',
-                'stock' => 100,
+                'stock' => 93,
                 'image' => 'roll-player-adventures.webp',
                 'offers' => NULL,
             ),
@@ -175,7 +175,7 @@ In Avalon, there’s a legend waiting behind every stone and every tree. All loc
 60–120 Min Playing Time
 Age: 14+',
                 'genre' => 'Adventure Games',
-                'stock' => 100,
+                'stock' => 54,
                 'image' => 'tainted-grail.webp',
                 'offers' => 'latest',
             ),
@@ -198,7 +198,7 @@ Victory is achieved by the player whose nation has the most culture at the end o
 120 Min
 Age: 14+',
                 'genre' => 'Expert Games',
-                'stock' => 100,
+                'stock' => 71,
                 'image' => 'through-the-ages.webp',
                 'offers' => NULL,
             ),
@@ -218,7 +218,7 @@ Build caravans, summon monsters, and convert followers in your quest to reign su
 90 Min
 Age: 14+',
                 'genre' => 'Expert Games',
-                'stock' => 100,
+                'stock' => 92,
                 'image' => 'ankh-gods-of-egypt.jpg',
                 'offers' => NULL,
             ),
@@ -230,7 +230,7 @@ Age: 14+',
                 'price' => 3000,
                 'description' => 'Two assassins and a crime-fighting lawyer brawling in the streets? Welcome to Hell.  Unmatched is a highly asymmetrical miniature fighting game for two or four players. Each hero is represented by a unique deck designed to evoke their style and legend. Tactical movement and no-luck combat resolution create a unique play experience that rewards expertise, but just when you\'ve mastered one set, new heroes arrive to provide all new match-ups.  Unmatched: Hell\'s Kitchen features three characters from the Marvel comics universe: Daredevil, Elektra, and Bullseye. 2–3 Players 20–40 Min Age: 14+',
                 'genre' => 'Expert Games',
-                'stock' => 100,
+                'stock' => 69,
                 'image' => 'unmatched-hells-kitchen.webp',
                 'offers' => 'popular',
             ),
@@ -256,7 +256,7 @@ Hegemony is heavily based on actual academic principles such as Social-Democracy
 90–180 Min
 Age: 14+',
                 'genre' => 'Expert Games',
-                'stock' => 100,
+                'stock' => 20,
                 'image' => 'hegemony.webp',
                 'offers' => NULL,
             ),
@@ -271,7 +271,7 @@ Revered for its healing techniques, the town of Yharnam is rapidly degenerating 
 
 In Bloodborne: The Board Game, a campaign-based action-adventure game, players will take on the role of Hunters working together against the game to uncover the mysteries hidden within the city of Yharnam and beyond. Featuring unique Trick Weapons, each with various forms and powers, Hunters will have to think quickly and adapt their tactics to overcome the multitude of foes that stand in their way. Learn their behavior, exploit their weaknesses, and strike them down! Featuring unique card-driven combat, luck has little place here. Success or failure will depend on your choices and how you approach each engagement!',
                 'genre' => 'Expert Games',
-                'stock' => 100,
+                'stock' => 43,
                 'image' => 'bloodborne.webp',
                 'offers' => 'popular',
             ),
@@ -302,7 +302,7 @@ Age: 14+
 
 -This is a retail edition-',
                 'genre' => 'Expert Games',
-                'stock' => 100,
+                'stock' => 56,
                 'image' => 'the-witcher.jpg',
                 'offers' => 'trending',
             ),
@@ -324,7 +324,7 @@ You will travel to various cities to acquire trade contracts for wool and iron a
 60–100 Min
 Age: 14+',
                 'genre' => 'Expert Games',
-                'stock' => 100,
+                'stock' => 99,
                 'image' => 'tiletum.webp',
                 'offers' => NULL,
             ),
@@ -349,7 +349,7 @@ In Awkward Yeti’s Organ ATTACK, you don’t need a medical degree to perform o
 15 Min
 Age: 8+',
                 'genre' => 'Family Games',
-                'stock' => 100,
+                'stock' => 78,
                 'image' => 'organ-attack.webp',
                 'offers' => 'trending',
             ),
@@ -375,7 +375,7 @@ Pandemic is the first game in the Pandemic series.
 45 Min
 Age: 8+',
                 'genre' => 'Family Games',
-                'stock' => 100,
+                'stock' => 34,
                 'image' => 'pandemic.jpg',
                 'offers' => NULL,
             ),
@@ -407,7 +407,7 @@ Jump start your Munchkin game with the Munchkin Tutorial by Dized! It will walk 
 Age: 10+
 Munchkin Deluxe the Board Game gives you and your friends the freedom to explore a dungeon, steal treasure, and backstab your friends — oh no, who said that? No one would ever think about betraying their friends to reach level 10 before them *wink wink*.',
                 'genre' => 'Family Games',
-                'stock' => 100,
+                'stock' => 61,
                 'image' => 'munchkin.jpg',
                 'offers' => NULL,
             ),
@@ -419,7 +419,7 @@ Munchkin Deluxe the Board Game gives you and your friends the freedom to explore
                 'price' => 3600,
                 'description' => 'With elegantly simple gameplay, Ticket to Ride can be learned in 3 minutes, while providing players with intense strategic and tactical decisions every turn. Players collect cards of various types of train cars they then use to claim railway routes in North America. The longer the routes, the more points they earn. Additional points come to those who fulfill Destination Tickets or goal cards that connect distant cities; and to the player who builds the longest continuous route. ',
                 'genre' => 'Family Games',
-                'stock' => 100,
+                'stock' => 84,
                 'image' => 'ticket-to-ride.jpg',
                 'offers' => 'trending',
             ),
@@ -442,7 +442,7 @@ The last round is triggered once a player has claimed their fifth victory point 
 30–45 Min
 Age: 8+',
                 'genre' => 'Family Games',
-                'stock' => 100,
+                'stock' => 65,
                 'image' => 'century-spice-road.jpg',
                 'offers' => NULL,
             ),
@@ -461,7 +461,7 @@ The goal of the game is to complete Grandpa\'s Goals and restore the Community C
 45–200 Min
 Age: 13+',
                 'genre' => 'Family Games',
-                'stock' => 100,
+                'stock' => 87,
                 'image' => 'stardew-valley.webp',
                 'offers' => 'trending',
             ),
@@ -476,7 +476,7 @@ Age: 13+',
 
 In a duel, be the fastest to fill your space with the imposed pieces. In solo mode, make as many figures as possible from the thousands of possible combinations. Realize even 3D figures! Alone or with other players, fun for the whole family! A game of logic and construction not to be missed!',
                 'genre' => 'Family Games',
-                'stock' => 100,
+                'stock' => 81,
                 'image' => 'katamino-family.webp',
                 'offers' => NULL,
             ),
@@ -495,7 +495,7 @@ The sun shines brightly on the canopy of the forest, and the trees use this wond
 30–60 Min
 Age: 10+',
                 'genre' => 'Family Games',
-                'stock' => 100,
+                'stock' => 59,
                 'image' => 'photosynthesis.webp',
                 'offers' => 'latest',
             ),
@@ -509,7 +509,7 @@ Age: 10+',
 
 Azul: Master Chocolatier includes double-sided factory boards, with these tiles being placed on these boards at the start of each round. One side of the factories is blank, and when using this side the game plays exactly like Azul. The other side of each factory tile has a special effect on it that modifies play in one way or another, putting a twist on the normal game. Additionally, the tiles are modeled to look like chocolates and other treats, despite remaining as inedible as the tiles in the original game.',
                 'genre' => 'Family Games',
-                'stock' => 100,
+                'stock' => 82,
                 'image' => 'azul-master-chocolatier.webp',
                 'offers' => NULL,
             ),
@@ -525,7 +525,7 @@ Azul: Master Chocolatier includes double-sided factory boards, with these tiles 
 
 In Cóatl, players work to build the most beautiful and valuable serpents. The serpents, or Cóatl, are constructed with a head, a tail, and a number of body tiles, each made from chunky, colorful plastic. On a turn, players will either take tiles from the central board to their personal board, or work to construct one of their Cóatls with the different tiles they\'ve collected. The game end is triggered when one player finishes their third Cóatl. Players receive points for fulfilling objectives, and the one with the most is named the new High Priest!',
                 'genre' => 'Family Games',
-                'stock' => 100,
+                'stock' => 50,
                 'image' => 'coatl.webp',
                 'offers' => 'trending',
             ),
@@ -545,7 +545,7 @@ Get inside the chapel and reach for treasure before others! SideQuest: 7th Sea i
 90–120 MinPlaying Time
 Age: 14+',
                 'genre' => 'Escape Games',
-                'stock' => 100,
+                'stock' => 47,
                 'image' => 'side-quest-7th-sea.jpg',
                 'offers' => NULL,
             ),
@@ -573,7 +573,7 @@ FROM BUENAVISTA WITH LOVE - CASE 3: South America - Gangs – Murders
 60–90 Min Playing Time
 Age: 12+',
                 'genre' => 'Escape Games',
-                'stock' => 100,
+                'stock' => 67,
                 'image' => 'perspectives.jpg',
                 'offers' => 'latest',
             ),
@@ -599,7 +599,7 @@ Accessible, intuitive and familiar: Septima is Mindclash Games’ most accessibl
 50–100 Min Playing Time
 Age: 12+',
                 'genre' => 'Expert Games',
-                'stock' => 100,
+                'stock' => 62,
                 'image' => 'septima.jpg',
                 'offers' => NULL,
             ),
@@ -654,7 +654,7 @@ Playing Time: 60-120 minutes
 Recommended Age: 14+
 Mechanisms: Action Point Allowance System, Cooperative Play, Deck/Pool Building, Hand Management, Role Playing, Variable Player Powers',
                 'genre' => 'Living Card Games',
-                'stock' => 100,
+                'stock' => 95,
                 'image' => 'arkham-horror.jpg',
                 'offers' => 'popular',
             ),
@@ -683,7 +683,7 @@ Hear why That Sound Game is so famous on TikTok! Forget what you look like; the 
 
 If your neighbors thought your parties weren’t loud enough, then they’re in for a surprise. Kick up the decibels and have them wondering what’s going on when you get a copy of That Sound Game to bring to your social events.',
                 'genre' => 'Party Games',
-                'stock' => 100,
+                'stock' => 29,
                 'image' => 'that-sound-game.webp',
                 'offers' => 'popular',
             ),
@@ -693,13 +693,11 @@ If your neighbors thought your parties weren’t loud enough, then they’re in 
                 'name' => 'One Night Ultimate Werewolf Daybreak',
                 'w_price' => 1000,
                 'price' => 1400,
-                'description' => 'No ordinary game of Werewolf as now everyone has special roles. Werewolves beware!
-
-One Night Ultimate Werewolf Daybreak is a fast game for 3-7 players in which everyone gets a hidden role, each with a special ability. (No plain "villagers" here!) In the course of a single morning, your village will decide who among them is a werewolf...because all it takes is finding one werewolf to win!
+            'description' => 'One Night Ultimate Werewolf Daybreak is a fast game for 3-7 players in which everyone gets a hidden role, each with a special ability. (No plain "villagers" here!) In the course of a single morning, your village will decide who among them is a werewolf...because all it takes is finding one werewolf to win!
 
 Daybreak includes eleven new roles, and it can be played on its own or combined with the original One Night Ultimate Werewolf game; when combined, you can have up to ten players in a single game.',
-                'genre' => 'Detective Games',
-                'stock' => 100,
+                'genre' => 'Family Games',
+                'stock' => 85,
                 'image' => 'one-night-ultimate-werewolf-daybreak.jpg',
                 'offers' => NULL,
             ),

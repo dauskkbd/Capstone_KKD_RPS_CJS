@@ -63,6 +63,28 @@ class UsersTableSeeder extends Seeder
                 'mobile' => '0927855665',
                 'province' => 'NCR',
             ),
+            4 => 
+            array (
+                'user_id' => 8,
+                'first_name' => 'Kevin Kenneth',
+                'last_name' => 'Daus',
+                'email' => 'dauskkbd@gmail.com',
+                'password' => '$2y$12$uTxzXyIzXxnj/NtQpyTqHOsTyE6cCuJlNB0SNjWGIqAJhoduC8gmO',
+                'role' => 'user',
+                'mobile' => '09272761763',
+                'province' => 'Laguna',
+            ),
+            5 => 
+            array (
+                'user_id' => 9,
+                'first_name' => 'Sample',
+                'last_name' => 'Sample',
+                'email' => 'sample@gmail.com',
+                'password' => '$2y$12$vrQ9WiWqibCI/4kzSeMih.WyLZFPbZiAg6HW0aK0knntGL0/a7mhC',
+                'role' => 'user',
+                'mobile' => '123456789',
+                'province' => 'Laguna',
+            ),
         ));
         
         
