@@ -16,23 +16,23 @@ class AdminController extends Controller
 
     public function show_dashboard()
     {
-        $orders = Order::query()
-            ->select(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d') AS time_placed"), DB::raw('SUM(product.price - product.w_price) AS total_profit'))
-            ->join('users_carts as uc', 'uc.order_id', '=', 'orders.order_id')
-            ->join('products as p', 'p.product_id', '=', 'uc.product_id')
-            ->groupBy(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d')"))
-            ->get();
+        // $orders = Order::query()
+        //     ->select(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d') AS time_placed"), DB::raw('SUM(p.price - p.w_price) AS total_profit'))
+        //     ->join('users_carts as uc', 'uc.order_id', '=', 'orders.order_id')
+        //     ->join('products as p', 'p.product_id', '=', 'uc.product_id')
+        //     ->groupBy(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d')"))
+        //     ->get();
 
         // $products = Product::query()
         //     ->select('*')
         //     ->get();
 
-        // $user_cart = UsersCart::query()
-        //     ->select('name', 'products.product_id', DB::raw('COUNT(products.product_id) AS product_count'))
-        //     ->join('products', 'products.product_id', '=', 'users_carts.product_id')
-        //     ->groupBy('name', 'products.product_id') // Corrected grouping
-        //     ->orderByDesc('product_count') // Use orderByDesc() for descending order
-        //     ->get();
+        $user_cart = UsersCart::query()
+            ->select('name', 'products.product_id', DB::raw('COUNT(products.product_id) AS product_count'))
+            ->join('products', 'products.product_id', '=', 'users_carts.product_id')
+            ->groupBy('name', 'products.product_id')
+            ->orderByDesc('product_count', 'ASC')
+            ->get();
 
 
         // $stock = [];
@@ -64,7 +64,7 @@ class AdminController extends Controller
         //     'labels' => $time_placed,
         //     'data' => $profit
         // ];
-        return view('admin_dashboard', compact('orders'));
+        return view('admin_dashboard', compact('user_cart'));
         // return view('admin_dashboard', compact('data', 'prod_data', 'user_cart'));
     }
 
