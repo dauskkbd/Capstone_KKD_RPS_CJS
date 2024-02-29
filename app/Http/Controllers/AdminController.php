@@ -23,31 +23,32 @@ class AdminController extends Controller
             ->groupBy(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d')"))
             ->get();
 
-        $products = Product::query()
-            ->select('*')
-            ->get();
+        // $products = Product::query()
+        //     ->select('*')
+        //     ->get();
 
+        // $user_cart = UsersCart::query()
+        //     ->select('name', 'products.product_id', DB::raw('COUNT(products.product_id) AS product_count'))
+        //     // $user_cart = UsersCart::select('name', 'products.product_id', DB::raw('COUNT(products.product_id) AS product_count'))
+        //     ->join('products', 'products.product_id', '=', 'users_carts.product_id')
+        //     ->groupBy('name', 'products.product_id')
+        //     ->orderBy('product_count', 'DESC')
+        //     ->get();
 
-        $user_cart = UsersCart::select('name', 'products.product_id', DB::raw('COUNT(products.product_id) AS product_count'))
-            ->join('products', 'products.product_id', '=', 'users_carts.product_id')
-            ->groupBy('name', 'products.product_id')
-            ->orderBy('product_count', 'DESC')
-            ->get();
+        // $stock = [];
+        // foreach ($products as $p) {
+        //     array_push($stock, $p->stock);
+        // }
 
-        $stock = [];
-        foreach ($products as $p) {
-            array_push($stock, $p->stock);
-        }
+        // $item_name = [];
+        // foreach ($products as $p) {
+        //     array_push($item_name, $p->name);
+        // }
 
-        $item_name = [];
-        foreach ($products as $p) {
-            array_push($item_name, $p->name);
-        }
-
-        $prod_data = [
-            'labels' => $item_name,
-            'prod_data' => $stock
-        ];
+        // $prod_data = [
+        //     'labels' => $item_name,
+        //     'prod_data' => $stock
+        // ];
 
         $profit = [];
         foreach ($orders as $o) {
@@ -64,8 +65,8 @@ class AdminController extends Controller
             'data' => $profit
         ];
 
-        Log::info('Dashboard accessed by admin.');
-        return view('admin_dashboard', compact('data', 'prod_data', 'user_cart'));
+        return view('admin_dashboard', compact('data'));
+        // return view('admin_dashboard', compact('data', 'prod_data', 'user_cart'));
     }
 
     public function admin_view_orders(string $id)
