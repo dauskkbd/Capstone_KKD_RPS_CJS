@@ -50,20 +50,20 @@ class AdminController extends Controller
         //     'prod_data' => $stock
         // ];
 
-        $profit = [];
-        foreach ($orders as $o) {
-            array_push($profit, $o->total_profit);
-        }
+        // $profit = [];
+        // foreach ($orders as $o) {
+        //     array_push($profit, $o->total_profit);
+        // }
 
-        $time_placed = [];
-        foreach ($orders as $o) {
-            array_push($time_placed, $o->time_placed);
-        }
+        // $time_placed = [];
+        // foreach ($orders as $o) {
+        //     array_push($time_placed, $o->time_placed);
+        // }
 
-        $data = [
-            'labels' => $time_placed,
-            'data' => $profit
-        ];
+        // $data = [
+        //     'labels' => $time_placed,
+        //     'data' => $profit
+        // ];
         return view('admin_dashboard', compact('data'));
         // return view('admin_dashboard', compact('data', 'prod_data', 'user_cart'));
     }
