@@ -48,49 +48,49 @@
     @include("layouts/footer")
     @include("layouts/script")
 </body>
+
+<script src="js/barchart.js"></script>
 <script>
-// Your Chart initialization code
-var ctx = document.getElementById('chart1').getContext('2d');
+var chartData = {!! $data !!};
+    // var ctx = document.getElementById('chart1').getContext('2d');
+    // function getColorFromString(str) {
+    // var hash = 0;
+    // for (var i = 0; i < str.length; i++) {
+    //     hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    // }
+    // var color = '#';
+    // for (var i = 0; i < 3; i++) {
+    //     var value = (hash >> (i * 8)) & 0xFF;
+    //     color += ('00' + value.toString(16)).substr(-2);
+    // }
+    // return 'rgba(' + parseInt(color.substr(1, 2), 16) + ',' + parseInt(color.substr(3, 2), 16) + ',' + parseInt(color.substr(5, 2), 16) + ', 1)';
+    // }
 
-// Function to generate a color based on a string input
-function getColorFromString(str) {
-    var hash = 0;
-    for (var i = 0; i < str.length; i++) {
-        hash = str.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    var color = '#';
-    for (var i = 0; i < 3; i++) {
-        var value = (hash >> (i * 8)) & 0xFF;
-        color += ('00' + value.toString(16)).substr(-2);
-    }
-    return 'rgba(' + parseInt(color.substr(1, 2), 16) + ',' + parseInt(color.substr(3, 2), 16) + ',' + parseInt(color.substr(5, 2), 16) + ', 1)';
-}
-
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: @json($data['labels']),
-        datasets: [{
-            label: 'Profit',
-            data: @json($data['data']),
-            backgroundColor: function(context) {
-                var date = context.chart.data.labels[context.dataIndex];
-                return getColorFromString(date); // Generate color based on the date
-            },
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
+    // var myChart = new Chart(ctx, {
+    // type: 'bar',
+    // data: {
+    //     labels: @json($data['labels']),
+    //     datasets: [{
+    //         label: 'Profit',
+    //         data: @json($data['data']),
+    //         backgroundColor: function(context) {
+    //             var date = context.chart.data.labels[context.dataIndex];
+    //             return getColorFromString(date);
+    //         },
+    //         borderColor: 'rgba(75, 192, 192, 1)',
+    //         borderWidth: 1
+    //     }]
+    // },
+    // options: {
+    //     scales: {
+    //         y: {
+    //             beginAtZero: true
+    //         }
+    //     }
+    // }
+    // });
 </script>
-<script>
+{{-- <script>
      var ctx = document.getElementById('chart2').getContext('2d');
         var myChart = new Chart(ctx, {
         type: 'line',
@@ -115,6 +115,6 @@ var myChart = new Chart(ctx, {
             }
         }
     });
-    </script>
+    </script> --}}
 
 </html>
