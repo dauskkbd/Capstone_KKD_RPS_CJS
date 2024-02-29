@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\User;
@@ -16,6 +16,8 @@ class AdminController extends Controller
 
     public function show_dashboard()
     {
+        Log::info('Dashboard accessed by admin.');
+
         $orders = Order::query()
             ->select(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d') AS time_placed"), DB::raw('SUM(p.price - p.w_price) AS total_profit'))
             ->join('users_carts as uc', 'uc.order_id', '=', 'orders.order_id')
