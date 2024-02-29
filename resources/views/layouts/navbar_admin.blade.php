@@ -35,7 +35,7 @@
             <!-- Left links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item" id="n1">
-                    <a class="nav-link" href="/dashboard">Dashboard</a>
+                    <a class="nav-link" href="admin/dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item" id="n2">
                     <a class="nav-link" href="/admin/panel/orders">Orders</a>

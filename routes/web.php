@@ -74,7 +74,7 @@ Route::middleware('checkSessionAdmin')->put('/admin/panel/products/edit/{id}', [
 Route::middleware('checkSessionAdmin')->get('/admin/panel/products/edit/{id}', [AdminController::class, 'edit_product_form']);
 Route::middleware('checkSessionAdmin')->delete('/admin/panel/users/{id}', [AdminController::class, 'delete_user']);
 Route::middleware('checkSessionAdmin')->delete('/admin/panel/products/{id}', [AdminController::class, 'delete_product']);
-Route::middleware('checkSessionAdmin')->get('/dashboard', [AdminController::class, 'show_dashboard']);
+Route::middleware('checkSessionAdmin')->get('admin/dashboard', [AdminController::class, 'show_dashboard']);
 
 
 
