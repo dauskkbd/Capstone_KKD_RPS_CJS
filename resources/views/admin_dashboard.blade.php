@@ -15,6 +15,7 @@
                 @foreach($orders as $o)
                 <p>{{$o -> time_placed}}</p>
                 <p>{{$o -> total_profit}}</p>
+                @endforeach
             </div>
             {{-- <div class="col-lg-6">
                 <canvas id="chart2"></canvas>
