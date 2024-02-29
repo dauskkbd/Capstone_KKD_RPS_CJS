@@ -16,56 +16,57 @@ class AdminController extends Controller
 
     public function show_dashboard()
     {
-        $orders = Order::query()
-            ->select(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d') AS time_placed"), DB::raw('SUM(p.price - p.w_price) AS total_profit'))
-            ->join('users_carts as uc', 'uc.order_id', '=', 'orders.order_id')
-            ->join('products as p', 'p.product_id', '=', 'uc.product_id')
-            ->groupBy(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d')"))
-            ->get();
+        // $orders = Order::query()
+        //     ->select(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d') AS time_placed"), DB::raw('SUM(p.price - p.w_price) AS total_profit'))
+        //     ->join('users_carts as uc', 'uc.order_id', '=', 'orders.order_id')
+        //     ->join('products as p', 'p.product_id', '=', 'uc.product_id')
+        //     ->groupBy(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d')"))
+        //     ->get();
 
-        $products = Product::query()
-            ->select('*')
-            ->get();
+        // $products = Product::query()
+        //     ->select('*')
+        //     ->get();
 
 
-        $user_cart = UsersCart::select('name', 'products.product_id', DB::raw('COUNT(products.product_id) AS product_count'))
-            ->join('products', 'products.product_id', '=', 'users_carts.product_id')
-            ->groupBy('name', 'products.product_id')
-            ->orderBy('product_count', 'DESC')
-            ->get();
+        // $user_cart = UsersCart::select('name', 'products.product_id', DB::raw('COUNT(products.product_id) AS product_count'))
+        //     ->join('products', 'products.product_id', '=', 'users_carts.product_id')
+        //     ->groupBy('name', 'products.product_id')
+        //     ->orderBy('product_count', 'DESC')
+        //     ->get();
 
-        $stock = [];
-        foreach ($products as $p) {
-            array_push($stock, $p->stock);
-        }
+        // $stock = [];
+        // foreach ($products as $p) {
+        //     array_push($stock, $p->stock);
+        // }
 
-        $item_name = [];
-        foreach ($products as $p) {
-            array_push($item_name, $p->name);
-        }
+        // $item_name = [];
+        // foreach ($products as $p) {
+        //     array_push($item_name, $p->name);
+        // }
 
-        $prod_data = [
-            'labels' => $item_name,
-            'prod_data' => $stock
-        ];
+        // $prod_data = [
+        //     'labels' => $item_name,
+        //     'prod_data' => $stock
+        // ];
 
-        $profit = [];
-        foreach ($orders as $o) {
-            array_push($profit, $o->total_profit);
-        }
+        // $profit = [];
+        // foreach ($orders as $o) {
+        //     array_push($profit, $o->total_profit);
+        // }
 
-        $time_placed = [];
-        foreach ($orders as $o) {
-            array_push($time_placed, $o->time_placed);
-        }
+        // $time_placed = [];
+        // foreach ($orders as $o) {
+        //     array_push($time_placed, $o->time_placed);
+        // }
 
-        $data = [
-            'labels' => $time_placed,
-            'data' => $profit
-        ];
+        // $data = [
+        //     'labels' => $time_placed,
+        //     'data' => $profit
+        // ];
 
-        Log::info('Dashboard accessed by admin.');
-        return view('admin_dashboard', compact('prod_data', 'user_cart') + ['data' => json_encode($data)]);
+        // Log::info('Dashboard accessed by admin.');
+        // return view('admin_dashboard', compact('data', 'prod_data', 'user_cart'));
+        return view('admin_dashboard');
     }
 
     public function admin_view_orders(string $id)
