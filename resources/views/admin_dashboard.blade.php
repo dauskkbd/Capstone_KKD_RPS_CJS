@@ -12,7 +12,9 @@
         <div class="row">
             <h1>Admin Dashboard</h1>
             <div class="col-lg-6">
-                <canvas id="chart1"></canvas>
+                @foreach($orders as $o)
+                <p>{{$o -> time_placed}}</p>
+                <p>{{$o -> total_profit}}</p>
             </div>
             {{-- <div class="col-lg-6">
                 <canvas id="chart2"></canvas>
