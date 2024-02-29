@@ -64,7 +64,7 @@ class AdminController extends Controller
         //     'labels' => $time_placed,
         //     'data' => $profit
         // ];
-        return view('admin_dashboard', compact('data'));
+        return view('admin_dashboard', compact('orders'));
         // return view('admin_dashboard', compact('data', 'prod_data', 'user_cart'));
     }
 
