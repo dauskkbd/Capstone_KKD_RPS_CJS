@@ -74,7 +74,7 @@ class UserController extends Controller
                 Session::put("role", $user->role);
 
                 if (Session::get("role") == "admin") {
-                    return redirect("/dashboard")->with('success', 'Logged in as Admin!');
+                    return redirect("/admin/dashboard")->with('success', 'Logged in as Admin!');
                 } else if (Session::get("role") == "user") {
                     return redirect("/")->with('success', 'Logged in as User!');
                 } else if (Session::get("role") == "delivery") {
