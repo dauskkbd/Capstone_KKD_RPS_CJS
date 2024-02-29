@@ -17,7 +17,7 @@ class AdminController extends Controller
     public function show_dashboard()
     {
         $orders = Order::query()
-            ->select(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d') AS time_placed"), DB::raw('SUM(p.price - p.w_price) AS total_profit'))
+            ->select(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d') AS time_placed"), DB::raw('SUM(product.price - product.w_price) AS total_profit'))
             ->join('users_carts as uc', 'uc.order_id', '=', 'orders.order_id')
             ->join('products as p', 'p.product_id', '=', 'uc.product_id')
             ->groupBy(DB::raw("DATE_FORMAT(orders.time_placed, '%Y-%m-%d')"))
