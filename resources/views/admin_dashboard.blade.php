@@ -11,19 +11,16 @@
     <div class="container admin-dashboard-container">
         <div class="row">
             <h1>Admin Dashboard</h1>
-            <div class="col-lg-6">
-                @foreach($orders as $o)
-                <p>{{$o -> time_placed}}</p>
-                <p>{{$o -> total_profit}}</p>
-                @endforeach
-            </div>
             {{-- <div class="col-lg-6">
+                <canvas id="chart1"></canvas>
+            </div>
+            <div class="col-lg-6">
                 <canvas id="chart2"></canvas>
             </div> --}}
         </div>
     </div>
 
-    {{-- <div class="container admin-card-container">
+    <div class="container admin-card-container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="card">
@@ -47,12 +44,12 @@
                   </div>
             </div>
         </div>
-    </div> --}}
+    </div>
     @include("layouts/footer")
     @include("layouts/script")
 </body>
 
-<script>
+{{-- <script>
     var ctx = document.getElementById('chart1').getContext('2d');
     function getColorFromString(str) {
     var hash = 0;
@@ -89,9 +86,9 @@
             }
         }
     }
-    });
+});
 </script>
-{{-- <script>
+<script>
      var ctx = document.getElementById('chart2').getContext('2d');
         var myChart = new Chart(ctx, {
         type: 'line',
